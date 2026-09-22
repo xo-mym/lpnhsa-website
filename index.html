@@ -54,9 +54,9 @@ header{
 .brand{display:flex;align-items:center;gap:12px}.brand img{width:58px;height:58px;object-fit:contain}
 .brand h1{font-size:17px;line-height:1.15;color:#073b78}.brand p{font-size:9px;color:#d71920;font-weight:800;letter-spacing:1.6px}
 nav>ul{display:flex;align-items:center;list-style:none;gap:2px}nav>ul>li{position:relative}
-nav a,.menu-button{border:0;background:none;padding:9px 10px;color:#073b78;font-size:11px;font-weight:800;cursor:pointer}
+nav a,.menu-button{border:0;background:none;padding:9px 10px;color:#073b78;font-size:11px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;line-height:1.2}
 nav a:hover,.menu-button:hover,.menu-button.active{color:#d71920}
-.menu-button::after{content:" ▾";font-size:8px}
+.menu-button::after{content:none}
 .dropdown{display:none;position:absolute;top:100%;left:0;width:245px;background:#fff;border:1px solid #e3ebf4;border-top:4px solid #d71920;box-shadow:0 20px 40px #102a4320;list-style:none;border-radius:0 0 12px 12px;overflow:hidden}
 .dropdown.open{display:block}.dropdown a{display:block;padding:11px 14px;color:#17365d;font-weight:600;border-bottom:1px solid #edf1f6}
 .dropdown a:hover{background:#f4f8fd;color:#d71920}
@@ -125,6 +125,40 @@ footer{background:#031e40;color:#fff;padding:55px 8% 25px}.footer-grid{display:g
   .hero{min-height:680px;padding:80px 6% 100px}.hero h2{font-size:45px}.hero-badge{display:none}.quick-wrap{padding:0 6%}.quick-grid{grid-template-columns:1fr 1fr}.quick-card{padding:20px 15px}.quick-card:nth-child(2){border-right:0}.quick-card:nth-child(3){border-top:1px solid #e7eef5}.quick-card:nth-child(4){border-top:1px solid #e7eef5}
   section{padding:70px 6%}.about-photo{min-height:330px}.about-copy h2{font-size:34px}.feature-list{grid-template-columns:1fr}.community-grid,.club-grid,.hymn-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}.gallery{display:block}.gallery-item{min-height:250px;margin-bottom:10px}.team-card{display:block;text-align:center}.lead-avatar{margin:0 auto 18px}.form-row{grid-template-columns:1fr;gap:0}.form{padding:25px 19px}
 }
+
+/* Clickable club category cards */
+.club-choice{padding:0}
+.club-card-button{
+  width:100%;
+  border:0;
+  background:transparent;
+  color:inherit;
+  text-align:left;
+  padding:25px;
+  cursor:pointer;
+  position:relative;
+}
+.club-card-button h3{color:#073b78;font-size:17px}
+.club-card-button p{font-size:12px;color:#6a7d90;margin:8px 0 15px}
+.club-card-button span{font-size:10px;color:#d71920;font-weight:900}
+.club-options{
+  display:none;
+  margin:0 25px 22px;
+  border-top:1px solid #e1eaf3;
+  padding-top:12px;
+}
+.club-options.open{display:grid;gap:7px}
+.club-options a{
+  display:block;
+  padding:10px 12px;
+  border-radius:9px;
+  background:#f4f8fd;
+  color:#073b78;
+  font-size:11px;
+  font-weight:800;
+}
+.club-options a:hover{background:#e7f0fa;color:#d71920}
+
 </style>
 </head>
 <body>
@@ -159,12 +193,12 @@ footer{background:#031e40;color:#fff;padding:55px 8% 25px}.footer-grid{display:g
       <li><a href="#home">HOME</a></li>
       <li><button class="menu-button" data-menu="about-menu">ABOUT</button><ul class="dropdown" id="about-menu">
         <li><a href="MISSION_VISION.html">Mission &amp; Vision</a></li><li><a href="ORG_CHART.html">Organizational Chart</a></li>
-        <li><a href="almanzians_hymn.html">Almanzians Hymn</a></li><li><a href="las_pinas_hymn.html">Las Piñas Hymn</a></li>
+        <li><a href="ALMANZIANS_HYMN.html">Almanzians Hymn</a></li><li><a href="las_pinas_hymn.html">Las Piñas Hymn</a></li>
         <li><a href="ncr_hymn.html">NCR Hymn</a></li><li><a href="national_anthem.html">National Anthem</a></li>
       </ul></li>
       <li><button class="menu-button" data-menu="academics-menu">ACADEMICS</button><ul class="dropdown" id="academics-menu">
         <li><a href="SECTION_LIST.html">Grade Levels &amp; Sections</a></li><li><a href="MIM.html">Mathematics Club</a></li>
-        <li><a href="ICT_CLub.html">ICT Club</a></li><li><a href="g3_project_TheScribe.html">The Scribe</a></li><li><a href="Ang_Tinig.html">Ang Tinig</a></li>
+        <li><a href="ICT_CLUB.html">ICT Club</a></li><li><a href="g3_project_TheScribe.html">The Scribe</a></li><li><a href="Ang_Tinig.html">Ang Tinig</a></li>
       </ul></li>
       <li><button class="menu-button" data-menu="student-menu">STUDENT LIFE</button><ul class="dropdown" id="student-menu">
         <li><a href="SSLG.html">SSLG</a></li><li><a href="g3_project_ESPCLUB.html">ESP Club</a></li><li><a href="BKD.html">BKD Club</a></li>
@@ -188,7 +222,7 @@ footer{background:#031e40;color:#fff;padding:55px 8% 25px}.footer-grid{display:g
 </section>
 
 <div class="quick-wrap"><div class="quick-grid">
-  <div class="quick-card"><div class="quick-num">01 / SCHOOL</div><h3>Information</h3><p>Mission, vision and school details.</p><a href="MISSION_VISION.html">EXPLORE →</a></div>
+  <div class="quick-card"><div class="quick-num">01 / SCHOOL</div><h3>Information</h3><p>Mission, vision and school details.</p><a href="MISSION_VISION.html">VIEW CLUB →</a></div>
   <div class="quick-card"><div class="quick-num">02 / ACADEMICS</div><h3>Grade Levels</h3><p>View sections and academic pages.</p><a href="SECTION_LIST.html">VIEW SECTIONS →</a></div>
   <div class="quick-card"><div class="quick-num">03 / COMMUNITY</div><h3>Student Life</h3><p>Meet clubs and organizations.</p><a href="#clubs">DISCOVER →</a></div>
   <div class="quick-card"><div class="quick-num">04 / CULTURE</div><h3>School Hymns</h3><p>Listen to the music of our community.</p><a href="#hymns">LISTEN →</a></div>
@@ -215,19 +249,92 @@ footer{background:#031e40;color:#fff;padding:55px 8% 25px}.footer-grid{display:g
   <div class="community-card"><div class="number">04 — COMMUNITY</div><h3>Connect</h3><p>Working with others through service and cooperation.</p></div>
 </div></section>
 
-<section class="clubs-bg" id="clubs"><div class="section-head"><div class="tag">STUDENT LIFE</div><h2>Clubs &amp; Organizations</h2><p>Explore the groups that make student life active, collaborative, and meaningful.</p></div>
-<div class="club-grid">
-  <div class="club-card"><h3>Academic Clubs</h3><p>Mathematics, ICT, journalism, and academic-related activities.</p><a href="MIM.html">VIEW ACADEMIC CLUBS →</a></div>
-  <div class="club-card"><h3>Leadership &amp; Service</h3><p>Organizations focused on leadership, responsibility, service, and participation.</p><a href="SSLG.html">VIEW ORGANIZATIONS →</a></div>
-  <div class="club-card"><h3>Scouting</h3><p>Activities encouraging teamwork, discipline, responsibility, and leadership.</p><a href="GSP.html">VIEW SCOUTING →</a></div>
-  <div class="club-card"><h3>Arts &amp; Culture</h3><p>Music, dance, performance, and cultural activities for expression.</p><a href="GLEE.html">EXPLORE ARTS →</a></div>
-  <div class="club-card"><h3>Environment</h3><p>Activities promoting environmental awareness and responsibility.</p><a href="g3_project_YES-O.html">EXPLORE YES-O →</a></div>
-  <div class="club-card"><h3>Young Farmers</h3><p>Activities related to agriculture, sustainability, and practical skills.</p><a href="YoungFarmersClub.html">EXPLORE →</a></div>
-</div></section>
+<section class="clubs-bg" id="clubs">
+  <div class="section-head">
+    <div class="tag">STUDENT LIFE</div>
+    <h2>Clubs &amp; Organizations</h2>
+    <p>Choose a group below to see the student organizations under each category.</p>
+  </div>
+
+  <div class="club-grid">
+    <div class="club-card club-choice">
+      <button class="club-card-button" type="button" data-club-menu="academic-clubs">
+        <h3>Academic Clubs</h3>
+        <p>Math, ICT, journalism, and other academic-related organizations.</p>
+        <span>VIEW CLUBS →</span>
+      </button>
+      <div class="club-options" id="academic-clubs">
+        <a href="MIM.html">MIM — Mathematics</a>
+        <a href="ICT_CLUB.html">ICT Club</a>
+        <a href="g3_project_TheScribe.html">The Scribe</a>
+        <a href="Ang_Tinig.html">Ang Tinig</a>
+      </div>
+    </div>
+
+    <div class="club-card club-choice">
+      <button class="club-card-button" type="button" data-club-menu="leadership-clubs">
+        <h3>Leadership &amp; Service</h3>
+        <p>Organizations focused on leadership, service, responsibility, and participation.</p>
+        <span>VIEW ORGANIZATIONS →</span>
+      </button>
+      <div class="club-options" id="leadership-clubs">
+        <a href="SSLG.html">SSLG</a>
+        <a href="g3_project_ESPCLUB.html">ESP Club</a>
+        <a href="BKD.html">BKD Club</a>
+      </div>
+    </div>
+
+    <div class="club-card club-choice">
+      <button class="club-card-button" type="button" data-club-menu="scouting-clubs">
+        <h3>Scouting</h3>
+        <p>Student organizations that develop teamwork, discipline, responsibility, and leadership.</p>
+        <span>VIEW GROUPS →</span>
+      </button>
+      <div class="club-options" id="scouting-clubs">
+        <a href="GSP.html">Girl Scouts</a>
+        <a href="BSP.html">Boy Scouts</a>
+      </div>
+    </div>
+
+    <div class="club-card club-choice">
+      <button class="club-card-button" type="button" data-club-menu="arts-clubs">
+        <h3>Arts &amp; Culture</h3>
+        <p>Music, dance, performance, and cultural activities for student expression.</p>
+        <span>VIEW ORGANIZATIONS →</span>
+      </button>
+      <div class="club-options" id="arts-clubs">
+        <a href="GLEE.html">Glee Club</a>
+        <a href="AFDT_Club.html">Folkloric Dance Troupe</a>
+      </div>
+    </div>
+
+    <div class="club-card club-choice">
+      <button class="club-card-button" type="button" data-club-menu="environment-clubs">
+        <h3>Environment</h3>
+        <p>Activities that promote environmental awareness and responsibility.</p>
+        <span>VIEW GROUPS →</span>
+      </button>
+      <div class="club-options" id="environment-clubs">
+        <a href="g3_project_YES-O.html">YES-O Club</a>
+      </div>
+    </div>
+
+    <div class="club-card club-choice">
+      <button class="club-card-button" type="button" data-club-menu="farming-clubs">
+        <h3>Young Farmers</h3>
+        <p>Activities related to agriculture, sustainability, and practical skills.</p>
+        <span>VIEW ORGANIZATION →</span>
+      </button>
+      <div class="club-options" id="farming-clubs">
+        <a href="YoungFarmersClub.html">Young Farmers Club</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="hymns" id="hymns"><div class="section-head"><div class="tag">SOUNDS OF OUR SCHOOL</div><h2>Hymns &amp; National Anthem</h2><p>A dedicated space for the music connected to LPNHS, Las Piñas, NCR, and the Philippines.</p></div>
 <div class="hymn-grid">
-  <div class="hymn-card"><span>SCHOOL</span><h3>Almanzians Hymn</h3><a href="almanzians_hymn.html">OPEN PAGE →</a></div>
+  <div class="hymn-card"><span>SCHOOL</span><h3>Almanzians Hymn</h3><a href="ALMANZIANS_HYMN.html">OPEN PAGE →</a></div>
   <div class="hymn-card"><span>CITY</span><h3>Las Piñas Hymn</h3><a href="las_pinas_hymn.html">OPEN PAGE →</a></div>
   <div class="hymn-card"><span>REGION</span><h3>NCR Hymn</h3><a href="ncr_hymn.html">OPEN PAGE →</a></div>
   <div class="hymn-card"><span>NATION</span><h3>National Anthem</h3><a href="national_anthem.html">OPEN PAGE →</a></div>
@@ -272,6 +379,28 @@ footer{background:#031e40;color:#fff;padding:55px 8% 25px}.footer-grid{display:g
 <div id="lightbox"><button class="close-lightbox" id="close-lightbox">×</button><img id="lightbox-img" src="" alt="School moment enlarged"></div>
 
 <script>
+
+const clubButtons = document.querySelectorAll(".club-card-button");
+const clubMenus = document.querySelectorAll(".club-options");
+
+function closeClubMenus(){
+  clubMenus.forEach(menu => menu.classList.remove("open"));
+}
+
+clubButtons.forEach(button => {
+  button.addEventListener("click", event => {
+    event.stopPropagation();
+    const menu = document.getElementById(button.dataset.clubMenu);
+    const isOpen = menu.classList.contains("open");
+    closeClubMenus();
+    if (!isOpen) menu.classList.add("open");
+  });
+});
+
+document.addEventListener("click", event => {
+  if (!event.target.closest(".club-choice")) closeClubMenus();
+});
+
 const menuButtons=document.querySelectorAll(".menu-button"),dropdowns=document.querySelectorAll(".dropdown"),mobileButton=document.getElementById("mobile-menu-button"),mainNav=document.getElementById("main-nav");
 function closeMenus(){dropdowns.forEach(x=>x.classList.remove("open"));menuButtons.forEach(x=>{x.classList.remove("active");x.setAttribute("aria-expanded","false")})}
 menuButtons.forEach(btn=>btn.addEventListener("click",e=>{e.stopPropagation();let m=document.getElementById(btn.dataset.menu),open=m.classList.contains("open");closeMenus();if(!open){m.classList.add("open");btn.classList.add("active");btn.setAttribute("aria-expanded","true")}}));
