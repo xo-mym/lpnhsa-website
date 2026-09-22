@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Las Piñas National High School - Almanza</title>
+<style>
+:root{
+  --navy:#062e63; --blue:#0b4f9c; --red:#d71920; --red2:#ef3b43;
+  --ink:#102a43; --muted:#66788a; --soft:#f4f8fd; --white:#fff;
+  --line:#dbe6f2; --gold:#f2c86b; --shadow:0 18px 45px rgba(6,46,99,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,Helvetica,sans-serif;color:var(--ink);background:#f7faff;line-height:1.65;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+::selection{background:#d71920;color:#fff}
+
+#progress{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,#d71920,#f2c86b,#0b4f9c);z-index:10000}
+
+#welcome-screen{
+  position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:24px;
+  background:radial-gradient(circle at 15% 15%,#1c67b8 0,transparent 32%),
+             radial-gradient(circle at 90% 85%,#d71920 0,transparent 30%),
+             linear-gradient(135deg,#031d40,#073b78 60%,#8e1016);
+  transition:.65s ease;
+}
+#particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.particle{position:absolute;width:7px;height:7px;border-radius:50%;background:#fff8;animation:float 9s infinite ease-in-out}
+@keyframes float{0%,100%{transform:translateY(0) scale(1);opacity:.2}50%{transform:translateY(-70px) scale(1.5);opacity:.7}}
+#particles .p1{left:12%;top:30%}.p2{left:25%;top:75%;animation-delay:1s}.p3{left:52%;top:22%;animation-delay:2s}.p4{left:75%;top:65%;animation-delay:3s}.p5{left:88%;top:20%;animation-delay:4s}
+#welcome-screen.hide{opacity:0;visibility:hidden;pointer-events:none}
+.welcome-box{
+  position:relative;width:min(760px,100%);padding:52px 32px;text-align:center;color:white;
+  background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.25);border-radius:30px;
+  backdrop-filter:blur(16px);box-shadow:0 30px 90px #00152f99
+}
+.welcome-logo{width:125px;height:125px;object-fit:contain;filter:drop-shadow(0 12px 20px #00152f77)}
+.eyebrow{font-size:11px;letter-spacing:4px;font-weight:800;color:#ffd9da;margin-top:18px}
+.welcome-box h1{font-size:clamp(26px,5vw,48px);line-height:1.08;margin:9px 0}
+.welcome-box p{color:#e7f1fc;font-size:14px}
+.welcome-line{width:75px;height:4px;border-radius:99px;background:linear-gradient(90deg,#fff,#f2c86b);margin:22px auto}
+.enter-btn{border:0;border-radius:999px;padding:13px 25px;background:#fff;color:#073b78;font-weight:800;cursor:pointer;transition:.25s}
+.enter-btn:hover{transform:translateY(-3px);background:#f2c86b}
+
+.top-bar{background:#062e63;color:#fff;display:flex;justify-content:space-between;gap:18px;padding:8px 6%;font-size:11px}
+.top-bar a:hover{color:#ffd0d2}
+
+header{
+  position:sticky;top:4px;z-index:2000;background:rgba(255,255,255,.94);backdrop-filter:blur(15px);
+  border-bottom:1px solid #e3ebf4;padding:13px 6%;display:flex;align-items:center;justify-content:space-between;gap:20px
+}
+.brand{display:flex;align-items:center;gap:12px}.brand img{width:58px;height:58px;object-fit:contain}
+.brand h1{font-size:17px;line-height:1.15;color:#073b78}.brand p{font-size:9px;color:#d71920;font-weight:800;letter-spacing:1.6px}
+nav>ul{display:flex;align-items:center;list-style:none;gap:2px}nav>ul>li{position:relative}
+nav a,.menu-button{border:0;background:none;padding:9px 10px;color:#073b78;font-size:11px;font-weight:800;cursor:pointer}
+nav a:hover,.menu-button:hover,.menu-button.active{color:#d71920}
+.menu-button::after{content:" ▾";font-size:8px}
+.dropdown{display:none;position:absolute;top:100%;left:0;width:245px;background:#fff;border:1px solid #e3ebf4;border-top:4px solid #d71920;box-shadow:0 20px 40px #102a4320;list-style:none;border-radius:0 0 12px 12px;overflow:hidden}
+.dropdown.open{display:block}.dropdown a{display:block;padding:11px 14px;color:#17365d;font-weight:600;border-bottom:1px solid #edf1f6}
+.dropdown a:hover{background:#f4f8fd;color:#d71920}
+.mobile-menu-button{display:none;border:0;border-radius:10px;background:#073b78;color:#fff;padding:9px 13px;font-weight:800}
+
+.hero{
+  min-height:720px;position:relative;display:flex;align-items:center;padding:80px 8%;
+  background:linear-gradient(90deg,#031e43e8 0%,#073b78b0 44%,#073b7820 100%),url("LPNHSA_COVER.jpg") center/cover;
+  overflow:hidden
+}
+.hero:after{content:"";position:absolute;inset:auto -10% -80px;height:180px;background:#f7faff;transform:skewY(-4deg)}
+.hero-content{position:relative;z-index:2;max-width:760px;color:#fff}
+.hero-kicker{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:900;letter-spacing:3px;color:#ffd7d8}
+.hero-kicker:before{content:"";width:35px;height:3px;background:#d71920;border-radius:99px}
+.hero h2{font-size:clamp(42px,6vw,78px);line-height:.98;margin:18px 0 22px;letter-spacing:-2px}
+.hero h2 span{color:#ff5960}
+.hero p{max-width:620px;color:#e9f2fb;font-size:15px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 19px;border-radius:999px;font-size:12px;font-weight:900;transition:.25s}
+.btn-red{background:#d71920;color:#fff;box-shadow:0 10px 25px #d7192040}.btn-red:hover{transform:translateY(-3px)}
+.btn-ghost{border:1px solid #ffffff66;color:#fff;background:#ffffff12}.btn-ghost:hover{background:#fff;color:#073b78}
+.hero-badge{position:absolute;right:7%;bottom:110px;z-index:3;width:185px;padding:20px;background:#fff;color:#073b78;border-radius:18px;box-shadow:var(--shadow)}
+.hero-badge strong{display:block;font-size:30px}.hero-badge small{color:#64748b;font-size:10px;font-weight:800;letter-spacing:1px}
+
+section{padding:90px 8%}.section-head{text-align:center;max-width:750px;margin:0 auto 45px}
+.section-head .tag{font-size:10px;font-weight:900;letter-spacing:3px;color:#d71920}
+.section-head h2{font-size:clamp(30px,4vw,45px);color:#073b78;line-height:1.1;margin:8px 0 12px}
+.section-head p{color:#6a7d90;font-size:14px}
+
+.quick-wrap{margin-top:-30px;position:relative;z-index:5;padding:0 8%}
+.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border:1px solid #e0e9f3;border-radius:20px;box-shadow:var(--shadow);overflow:hidden}
+.quick-card{padding:25px 20px;border-right:1px solid #e7eef5;transition:.25s}.quick-card:last-child{border:0}.quick-card:hover{background:#f6f9fd;transform:translateY(-4px)}
+.quick-num{font-size:10px;font-weight:900;color:#d71920;letter-spacing:2px}.quick-card h3{font-size:16px;color:#073b78;margin:5px 0}.quick-card p{font-size:12px;color:#6a7d90;margin-bottom:9px}.quick-card a{font-size:10px;font-weight:900;color:#d71920}
+
+.about{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.about-photo{min-height:490px;border-radius:26px;background:linear-gradient(145deg,#073b7833,#d7192022),url("momentno.1.jpg") center/cover;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.about-photo:after{content:"LPNHS • ALMANZA";position:absolute;left:22px;bottom:20px;padding:8px 12px;background:#073b78dd;color:#fff;border-left:4px solid #d71920;font-size:10px;font-weight:900;letter-spacing:1px}
+.about-copy small{font-size:10px;color:#d71920;font-weight:900;letter-spacing:3px}.about-copy h2{font-size:42px;line-height:1.1;color:#073b78;margin:10px 0 18px}.about-copy p{color:#66788a;font-size:14px;margin-bottom:14px}
+.feature-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:25px}.feature{padding:15px;border:1px solid #e1eaf3;background:#fff;border-radius:12px}.feature b{color:#073b78;font-size:12px}.feature span{display:block;color:#74869a;font-size:11px;margin-top:3px}
+
+.community{background:linear-gradient(135deg,#062e63,#0a4f9c);color:#fff;position:relative;overflow:hidden}.community:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-150px;top:-180px;border:70px solid #ffffff0d}
+.community .section-head h2{color:#fff}.community .section-head p{color:#d9e9fb}
+.community-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.community-card{padding:28px 20px;background:#ffffff10;border:1px solid #ffffff1e;border-radius:18px;backdrop-filter:blur(5px);transition:.25s}.community-card:hover{transform:translateY(-6px);background:#ffffff18}
+.community-card .number{font-size:11px;color:#ffb8bc;font-weight:900;letter-spacing:2px}.community-card h3{font-size:17px;margin:8px 0}.community-card p{color:#d6e5f5;font-size:12px}
+
+.clubs-bg{background:#f4f8fd}.club-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.club-card{background:#fff;border:1px solid #e1eaf3;border-radius:18px;padding:25px;position:relative;overflow:hidden;box-shadow:0 8px 25px #0b4f9c0b;transition:.25s}.club-card:before{content:"";position:absolute;left:0;top:0;width:5px;height:100%;background:linear-gradient(#d71920,#0b4f9c)}.club-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.club-card h3{color:#073b78;font-size:17px}.club-card p{font-size:12px;color:#6a7d90;margin:8px 0 15px}.club-card a{font-size:10px;color:#d71920;font-weight:900}
+
+.hymns{background:#fff}.hymn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.hymn-card{border:1px solid #e0e9f3;border-radius:18px;padding:24px;background:linear-gradient(145deg,#fff,#f5f9fe);transition:.25s;position:relative;overflow:hidden}.hymn-card:after{content:"♫";position:absolute;right:15px;top:7px;font-size:70px;color:#073b7808;font-weight:900}.hymn-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}.hymn-card span{font-size:9px;color:#d71920;font-weight:900;letter-spacing:2px}.hymn-card h3{font-size:18px;color:#073b78;margin:7px 0 13px}.hymn-card a{font-size:10px;font-weight:900;color:#d71920}
+
+.moments{background:#f4f8fd}.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:210px 210px;gap:10px}.gallery-item{border-radius:16px;background-size:cover;background-position:center;cursor:pointer;position:relative;overflow:hidden;transition:.3s}.gallery-item:hover{transform:scale(1.012);box-shadow:0 15px 35px #062e6330}.gallery-item:after{content:"VIEW";position:absolute;inset:auto 13px 13px auto;background:#073b78dd;color:#fff;padding:5px 8px;border-radius:7px;font-size:8px;font-weight:900;letter-spacing:1px}.g1{grid-row:span 2;background-image:url("momentno.2.jpg")}.g2{background-image:url("momentno.3.jpg")}.g3{background-image:url("momentno.4.jpg")}.g4{grid-column:2/4;background-image:url("momentno.5.jpg")}
+
+.team-preview{background:#fff}.team-card{max-width:950px;margin:auto;border-radius:24px;padding:30px;background:linear-gradient(135deg,#062e63,#0b4f9c);display:flex;align-items:center;gap:30px;color:#fff;box-shadow:var(--shadow)}.lead-avatar{width:120px;height:120px;flex:0 0 120px;border-radius:50%;border:5px solid #fff;background:#d71920;display:grid;place-items:center;font-size:30px;font-weight:900;overflow:hidden}.lead-avatar img{width:100%;height:100%;object-fit:cover;display:block}.lead-initials{display:none;width:100%;height:100%;place-items:center}.team-card small{color:#ffccd0;font-size:10px;font-weight:900;letter-spacing:2px}.team-card h3{font-size:28px;margin:4px 0}.team-card p{font-size:13px;color:#dceaf9}.team-card a{display:inline-block;margin-top:12px;font-size:10px;font-weight:900;color:#fff;border:1px solid #ffffff55;padding:9px 13px;border-radius:999px}
+
+.feedback{background:linear-gradient(135deg,#062e63,#073b78);color:#fff}.feedback .section-head h2{color:#fff}.feedback .section-head p{color:#dbeafe}
+.form{max-width:900px;margin:auto;background:#fff;border-radius:22px;padding:34px;color:#17365d;box-shadow:0 20px 55px #001d3d66}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:17px}.form-group{margin-bottom:17px}.form label{display:block;font-size:11px;font-weight:900;margin-bottom:6px}.form input,.form select,.form textarea{width:100%;padding:12px;border:1px solid #d5e0eb;border-radius:10px;outline:0;font-size:13px;background:#fbfdff}.form input:focus,.form select:focus,.form textarea:focus{border-color:#0b4f9c;box-shadow:0 0 0 3px #0b4f9c12}.rating{display:flex;gap:15px;flex-wrap:wrap}.rating span{display:flex;gap:5px;align-items:center}.rating label{font-weight:500;margin:0}.form button{border:0;border-radius:999px;padding:12px 22px;background:#d71920;color:#fff;font-size:11px;font-weight:900;cursor:pointer}.form button:hover{background:#b51218}
+
+.contact{background:#f7faff}.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.contact-card{background:#fff;border:1px solid #e1eaf3;border-radius:17px;padding:25px;text-align:center;transition:.25s}.contact-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.contact-card h3{font-size:12px;color:#073b78;margin-bottom:7px}.contact-card p{font-size:12px;color:#6a7d90}
+
+footer{background:#031e40;color:#fff;padding:55px 8% 25px}.footer-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:35px;margin-bottom:30px}.footer-logo{display:flex;align-items:center;gap:12px}.footer-logo img{width:55px;height:55px;object-fit:contain}.footer-grid h2{font-size:19px}.footer-grid h3{font-size:11px;color:#ffb8bc;letter-spacing:2px;margin-bottom:10px}.footer-grid p,.footer-grid a{font-size:11px;color:#b9cbe0}.footer-grid a{display:block;margin:6px 0}.footer-grid a:hover{color:#fff}.copyright{border-top:1px solid #ffffff20;padding-top:18px;text-align:center;color:#91a8c0;font-size:10px}
+
+#lightbox{position:fixed;inset:0;background:#03152eee;z-index:5000;display:none;place-items:center;padding:25px}#lightbox.open{display:grid}#lightbox img{max-width:min(1000px,92vw);max-height:84vh;border-radius:18px;box-shadow:0 30px 80px #0008}.close-lightbox{position:absolute;top:22px;right:28px;color:#fff;background:#ffffff18;border:1px solid #fff3;border-radius:50%;width:42px;height:42px;font-size:22px;cursor:pointer}
+
+@media(max-width:1050px){nav>ul{gap:0}.quick-grid,.community-grid,.hymn-grid{grid-template-columns:1fr 1fr}.about{grid-template-columns:1fr}.club-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:750px){
+  .top-bar{display:none}header{padding:11px 5%;top:4px}.brand h1{font-size:14px}.brand p{font-size:8px}.brand img{width:52px;height:52px}.mobile-menu-button{display:block}nav{display:none;width:100%}nav.mobile-open{display:block}nav>ul{display:block}nav>ul>li{border-top:1px solid #edf1f5}nav a,.menu-button{width:100%;text-align:left;padding:12px}.dropdown{position:static;width:100%;box-shadow:none;border-top:0;border-left:4px solid #d71920;border-radius:0;background:#f8fafc}
+  .hero{min-height:680px;padding:80px 6% 100px}.hero h2{font-size:45px}.hero-badge{display:none}.quick-wrap{padding:0 6%}.quick-grid{grid-template-columns:1fr 1fr}.quick-card{padding:20px 15px}.quick-card:nth-child(2){border-right:0}.quick-card:nth-child(3){border-top:1px solid #e7eef5}.quick-card:nth-child(4){border-top:1px solid #e7eef5}
+  section{padding:70px 6%}.about-photo{min-height:330px}.about-copy h2{font-size:34px}.feature-list{grid-template-columns:1fr}.community-grid,.club-grid,.hymn-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}.gallery{display:block}.gallery-item{min-height:250px;margin-bottom:10px}.team-card{display:block;text-align:center}.lead-avatar{margin:0 auto 18px}.form-row{grid-template-columns:1fr;gap:0}.form{padding:25px 19px}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<div id="welcome-screen">
+  <div id="particles"><i class="particle p1"></i><i class="particle p2"></i><i class="particle p3"></i><i class="particle p4"></i><i class="particle p5"></i></div>
+  <div class="welcome-box">
+    <img src="SCHOOLLOGO.jpg" alt="LPNHS Almanza logo" class="welcome-logo">
+    <div class="eyebrow">WELCOME TO</div>
+    <h1>LAS PIÑAS NATIONAL HIGH SCHOOL</h1>
+    <p>ALMANZA • SCHOOL ID: 320306</p>
+    <div class="welcome-line"></div>
+    <button class="enter-btn" id="welcome-enter">ENTER LPNHS — ALMANZA</button>
+  </div>
+</div>
+
+<div class="top-bar">
+  <a href="https://www.google.com/maps/search/?api=1&query=Lazo+St%2C+Brgy.+Almanza+Uno%2C+Las+Pi%C3%B1as+City" target="_blank" rel="noopener">📍 Lazo St., Brgy. Almanza Uno, Las Piñas City</a>
+  <a href="tel:88282886">☎ 8 828-28-86</a>
+  <span>School ID: 320306</span>
+</div>
+
+<header>
+  <div class="brand">
+    <img src="SCHOOLLOGO.jpg" alt="LPNHS Almanza logo">
+    <div><h1>LAS PIÑAS NATIONAL HIGH SCHOOL</h1><p>ALMANZA • OFFICIAL SCHOOL WEBSITE</p></div>
+  </div>
+  <button class="mobile-menu-button" id="mobile-menu-button">MENU</button>
+  <nav id="main-nav">
+    <ul>
+      <li><a href="#home">HOME</a></li>
+      <li><button class="menu-button" data-menu="about-menu">ABOUT</button><ul class="dropdown" id="about-menu">
+        <li><a href="MISSION_VISION.html">Mission &amp; Vision</a></li><li><a href="ORG_CHART.html">Organizational Chart</a></li>
+        <li><a href="almanzians_hymn.html">Almanzians Hymn</a></li><li><a href="las_pinas_hymn.html">Las Piñas Hymn</a></li>
+        <li><a href="ncr_hymn.html">NCR Hymn</a></li><li><a href="national_anthem.html">National Anthem</a></li>
+      </ul></li>
+      <li><button class="menu-button" data-menu="academics-menu">ACADEMICS</button><ul class="dropdown" id="academics-menu">
+        <li><a href="SECTION_LIST.html">Grade Levels &amp; Sections</a></li><li><a href="MIM.html">Mathematics Club</a></li>
+        <li><a href="ICT_CLub.html">ICT Club</a></li><li><a href="g3_project_TheScribe.html">The Scribe</a></li><li><a href="Ang_Tinig.html">Ang Tinig</a></li>
+      </ul></li>
+      <li><button class="menu-button" data-menu="student-menu">STUDENT LIFE</button><ul class="dropdown" id="student-menu">
+        <li><a href="SSLG.html">SSLG</a></li><li><a href="g3_project_ESPCLUB.html">ESP Club</a></li><li><a href="BKD.html">BKD Club</a></li>
+        <li><a href="CIC (1).html">CIC Club</a></li><li><a href="GSP.html">Girl Scouts</a></li><li><a href="BSP.html">Boy Scouts</a></li>
+        <li><a href="GLEE.html">Glee Club</a></li><li><a href="AFDT_Club.html">Folkloric Dance Troupe</a></li><li><a href="YoungFarmersClub.html">Young Farmers Club</a></li><li><a href="g3_project_YES-O.html">YES-O Club</a></li>
+      </ul></li>
+      <li><a href="#hymns">HYMNS</a></li><li><a href="#team">TEAM</a></li><li><a href="#feedback">FEEDBACK</a></li><li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-kicker">WELCOME TO LPNHS — ALMANZA</div>
+    <h2>Learn. Grow.<br><span>Lead.</span></h2>
+    <p>A student-centered digital space celebrating learning, leadership, creativity, organizations, school memories, and the people behind the LPNHS-Almanza community.</p>
+    <div class="hero-actions"><a class="btn btn-red" href="#clubs">EXPLORE STUDENT LIFE →</a><a class="btn btn-ghost" href="#hymns">LISTEN TO OUR HYMNS</a></div>
+  </div>
+  <div class="hero-badge"><strong>320306</strong><small>SCHOOL ID • ALMANZA</small></div>
+</section>
+
+<div class="quick-wrap"><div class="quick-grid">
+  <div class="quick-card"><div class="quick-num">01 / SCHOOL</div><h3>Information</h3><p>Mission, vision and school details.</p><a href="MISSION_VISION.html">EXPLORE →</a></div>
+  <div class="quick-card"><div class="quick-num">02 / ACADEMICS</div><h3>Grade Levels</h3><p>View sections and academic pages.</p><a href="SECTION_LIST.html">VIEW SECTIONS →</a></div>
+  <div class="quick-card"><div class="quick-num">03 / COMMUNITY</div><h3>Student Life</h3><p>Meet clubs and organizations.</p><a href="#clubs">DISCOVER →</a></div>
+  <div class="quick-card"><div class="quick-num">04 / CULTURE</div><h3>School Hymns</h3><p>Listen to the music of our community.</p><a href="#hymns">LISTEN →</a></div>
+</div></div>
+
+<section id="about"><div class="about">
+  <div class="about-photo" role="img" aria-label="School photo"></div>
+  <div class="about-copy">
+    <small>ABOUT OUR SCHOOL</small><h2>A place to learn, grow, and belong.</h2>
+    <p>Las Piñas National High School - Almanza is a public secondary school serving the community of Almanza Uno, Las Piñas City.</p>
+    <p>School life extends beyond classroom lessons through student organizations, leadership activities, cultural programs, service, and community involvement.</p>
+    <div class="feature-list">
+      <div class="feature"><b>LEARNING</b><span>Knowledge and discovery</span></div><div class="feature"><b>LEADERSHIP</b><span>Responsibility and teamwork</span></div>
+      <div class="feature"><b>CREATIVITY</b><span>Arts and expression</span></div><div class="feature"><b>COMMUNITY</b><span>Service and cooperation</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="community"><div class="section-head"><div class="tag">OUR COMMUNITY</div><h2>Beyond the Classroom</h2><p>Student experiences can build confidence, responsibility, creativity, and a stronger sense of community.</p></div>
+<div class="community-grid">
+  <div class="community-card"><div class="number">01 — LEARNING</div><h3>Discover</h3><p>Building knowledge and discovering new ideas.</p></div>
+  <div class="community-card"><div class="number">02 — LEADERSHIP</div><h3>Lead</h3><p>Developing responsibility, teamwork, and initiative.</p></div>
+  <div class="community-card"><div class="number">03 — CREATIVITY</div><h3>Create</h3><p>Expressing ideas through projects and activities.</p></div>
+  <div class="community-card"><div class="number">04 — COMMUNITY</div><h3>Connect</h3><p>Working with others through service and cooperation.</p></div>
+</div></section>
+
+<section class="clubs-bg" id="clubs"><div class="section-head"><div class="tag">STUDENT LIFE</div><h2>Clubs &amp; Organizations</h2><p>Explore the groups that make student life active, collaborative, and meaningful.</p></div>
+<div class="club-grid">
+  <div class="club-card"><h3>Academic Clubs</h3><p>Mathematics, ICT, journalism, and academic-related activities.</p><a href="MIM.html">VIEW ACADEMIC CLUBS →</a></div>
+  <div class="club-card"><h3>Leadership &amp; Service</h3><p>Organizations focused on leadership, responsibility, service, and participation.</p><a href="SSLG.html">VIEW ORGANIZATIONS →</a></div>
+  <div class="club-card"><h3>Scouting</h3><p>Activities encouraging teamwork, discipline, responsibility, and leadership.</p><a href="GSP.html">VIEW SCOUTING →</a></div>
+  <div class="club-card"><h3>Arts &amp; Culture</h3><p>Music, dance, performance, and cultural activities for expression.</p><a href="GLEE.html">EXPLORE ARTS →</a></div>
+  <div class="club-card"><h3>Environment</h3><p>Activities promoting environmental awareness and responsibility.</p><a href="g3_project_YES-O.html">EXPLORE YES-O →</a></div>
+  <div class="club-card"><h3>Young Farmers</h3><p>Activities related to agriculture, sustainability, and practical skills.</p><a href="YoungFarmersClub.html">EXPLORE →</a></div>
+</div></section>
+
+<section class="hymns" id="hymns"><div class="section-head"><div class="tag">SOUNDS OF OUR SCHOOL</div><h2>Hymns &amp; National Anthem</h2><p>A dedicated space for the music connected to LPNHS, Las Piñas, NCR, and the Philippines.</p></div>
+<div class="hymn-grid">
+  <div class="hymn-card"><span>SCHOOL</span><h3>Almanzians Hymn</h3><a href="almanzians_hymn.html">OPEN PAGE →</a></div>
+  <div class="hymn-card"><span>CITY</span><h3>Las Piñas Hymn</h3><a href="las_pinas_hymn.html">OPEN PAGE →</a></div>
+  <div class="hymn-card"><span>REGION</span><h3>NCR Hymn</h3><a href="ncr_hymn.html">OPEN PAGE →</a></div>
+  <div class="hymn-card"><span>NATION</span><h3>National Anthem</h3><a href="national_anthem.html">OPEN PAGE →</a></div>
+</div></section>
+
+<section class="moments"><div class="section-head"><div class="tag">SCHOOL MOMENTS</div><h2>Life at LPNHS — Almanza</h2><p>A visual collection of school moments and memories.</p></div>
+<div class="gallery">
+  <div class="gallery-item g1" data-image="momentno.2.jpg"></div><div class="gallery-item g2" data-image="momentno.3.jpg"></div>
+  <div class="gallery-item g3" data-image="momentno.4.jpg"></div><div class="gallery-item g4" data-image="momentno.5.jpg"></div>
+</div></section>
+
+<section class="team-preview" id="team"><div class="section-head"><div class="tag">THE PEOPLE BEHIND THE WEBSITE</div><h2>Meet the Website Team</h2><p>A student-built website created through teamwork, ideas, coding, and collaboration.</p></div>
+<div class="team-card">
+  <div class="lead-avatar"><img src="mhayumie_granados.jpg" alt="Mhayumie Granados" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"><span class="lead-initials">MG</span></div><div><small>LEAD CODER</small><h3>Mhayumie Granados</h3><p>Lead developer of the LPNHS — Almanza student website project.</p><a href="credits.html">MEET THE WHOLE TEAM →</a></div>
+</div></section>
+
+<section class="feedback" id="feedback"><div class="section-head"><div class="tag" style="color:#ffb8bc">WE VALUE YOUR VOICE</div><h2>Website Feedback</h2><p>Tell the website team about your experience.</p></div>
+<form class="form" action="https://formsubmit.co/mhayumiegranados09@gmail.com" method="POST">
+  <input type="hidden" name="_subject" value="LPNHS Almanza Website Feedback"><input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="true">
+  <div class="form-row"><div class="form-group"><label>FULL NAME</label><input name="name" type="text" placeholder="Enter your name" required></div><div class="form-group"><label>EMAIL ADDRESS</label><input name="email" type="email" placeholder="Enter your email" required></div></div>
+  <div class="form-row"><div class="form-group"><label>GRADE LEVEL</label><select name="grade" required><option value="">Select Grade Level</option><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option><option>Grade 10</option></select></div><div class="form-group"><label>SECTION</label><select name="section"><option value="">Select Section</option><option>Blessedness</option><option>Accountability</option><option>Adaptability</option><option>Altruism</option><option>Approachability</option><option>Austerity</option><option>Authenticity</option><option>Benevolence</option><option>Bravery</option><option>Calmness</option><option>Camaraderie</option><option>Caring</option><option>Clever</option><option>Connection</option><option>Consideration</option><option>Consistency</option><option>Contentment</option><option>Cooperation</option><option>Courage</option><option>Creativity</option><option>Dependability</option><option>Determination</option><option>Dignity</option><option>Diplomacy</option><option>Discernment</option><option>Discipline</option><option>Fairness</option><option>Faith</option><option>Family</option><option>Fearless</option><option>Fidelity</option><option>Flexibility</option><option>Forgiveness</option><option>Fortitude</option><option>Friendliness</option><option>Frugality</option><option>Fulfillment</option><option>Generosity</option><option>Commitment</option><option>Environmentalist</option><option>Imaginative</option><option>Independence</option><option>Influence</option><option>Innovation</option><option>Integrity</option><option>Joyfulness</option><option>Justice</option><option>Kindness</option><option>Leadership</option></select></div></div>
+  <div class="form-group"><label>WEBSITE RATING</label><div class="rating"><span><input type="radio" name="rating" value="Excellent"><label>Excellent</label></span><span><input type="radio" name="rating" value="Good"><label>Good</label></span><span><input type="radio" name="rating" value="Fair"><label>Fair</label></span></div></div>
+  <div class="form-group"><label>YOUR FEEDBACK</label><textarea name="message" rows="6" placeholder="Tell us what you think..." required></textarea></div>
+  <button type="submit">SEND FEEDBACK →</button>
+</form></section>
+
+<section class="contact" id="contact"><div class="section-head"><div class="tag">GET IN TOUCH</div><h2>School Information</h2><p>Use the links below to access the school's contact details.</p></div>
+<div class="contact-grid">
+  <a class="contact-card" href="https://www.google.com/maps/search/?api=1&query=Lazo+St%2C+Brgy.+Almanza+Uno%2C+Las+Pi%C3%B1as+City" target="_blank" rel="noopener"><h3>ADDRESS</h3><p>Lazo St., Brgy. Almanza Uno, Las Piñas City</p></a>
+  <a class="contact-card" href="tel:88282886"><h3>TELEPHONE</h3><p>8 828-28-86</p></a>
+  <a class="contact-card" href="mailto:laspinasnhsalmanza@yahoo.com.ph"><h3>EMAIL</h3><p>laspinasnhsalmanza@yahoo.com.ph</p></a>
+</div></section>
+</main>
+
+<footer><div class="footer-grid">
+  <div><div class="footer-logo"><img src="SCHOOLLOGO.jpg" alt="School logo"><div><h2>LAS PIÑAS NATIONAL HIGH SCHOOL</h2><p>ALMANZA • SCHOOL ID: 320306</p></div></div><p style="margin-top:15px">Student-made digital school website project.</p></div>
+  <div><h3>EXPLORE</h3><a href="#about">About</a><a href="#clubs">Student Life</a><a href="#hymns">Hymns</a><a href="#team">Website Team</a></div>
+  <div><h3>PROJECT</h3><a href="credits.html">Credits &amp; Sources</a><a href="MISSION_VISION.html">Mission &amp; Vision</a><a href="SECTION_LIST.html">Grade Levels</a><a href="#contact">Contact</a></div>
+</div><div class="copyright">© 2026 • LPNHS — Almanza • Student Website Project</div></footer>
+
+<div id="lightbox"><button class="close-lightbox" id="close-lightbox">×</button><img id="lightbox-img" src="" alt="School moment enlarged"></div>
+
+<script>
+const menuButtons=document.querySelectorAll(".menu-button"),dropdowns=document.querySelectorAll(".dropdown"),mobileButton=document.getElementById("mobile-menu-button"),mainNav=document.getElementById("main-nav");
+function closeMenus(){dropdowns.forEach(x=>x.classList.remove("open"));menuButtons.forEach(x=>{x.classList.remove("active");x.setAttribute("aria-expanded","false")})}
+menuButtons.forEach(btn=>btn.addEventListener("click",e=>{e.stopPropagation();let m=document.getElementById(btn.dataset.menu),open=m.classList.contains("open");closeMenus();if(!open){m.classList.add("open");btn.classList.add("active");btn.setAttribute("aria-expanded","true")}}));
+document.addEventListener("click",e=>{if(!e.target.closest("nav"))closeMenus()});
+document.querySelectorAll(".dropdown a,a[href^='#']").forEach(a=>a.addEventListener("click",()=>{closeMenus();mainNav.classList.remove("mobile-open")}));
+mobileButton.addEventListener("click",()=>mainNav.classList.toggle("mobile-open"));
+
+const welcome=document.getElementById("welcome-screen"),enter=document.getElementById("welcome-enter");
+enter.addEventListener("click",()=>{sessionStorage.setItem("lpnsa_has_entered","true");welcome.classList.add("hide")});
+if(sessionStorage.getItem("lpnsa_has_entered")==="true")welcome.classList.add("hide");
+
+const progress=document.getElementById("progress");
+window.addEventListener("scroll",()=>{let h=document.documentElement.scrollHeight-innerHeight;progress.style.width=(h>0?(scrollY/h)*100:0)+"%"});
+
+const lb=document.getElementById("lightbox"),lbImg=document.getElementById("lightbox-img");
+document.querySelectorAll(".gallery-item").forEach(item=>item.addEventListener("click",()=>{lbImg.src=item.dataset.image;lb.classList.add("open")}));
+document.getElementById("close-lightbox").addEventListener("click",()=>lb.classList.remove("open"));
+lb.addEventListener("click",e=>{if(e.target===lb)lb.classList.remove("open")});
+</script>
+</body>
+</html>

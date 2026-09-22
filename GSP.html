@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Girl Scouts of the Philippines</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f8fc;
+            color: #17365d;
+        }
+
+        .topbar {
+            background-color: #064b91;
+            color: white;
+            padding: 8px 6%;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        header {
+            background-color: white;
+            padding: 18px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px #cccccc;
+        }
+
+        .school-name {
+            display: flex;
+            align-items: center;
+        }
+
+        .school-name img {
+            width: 65px;
+            height: 65px;
+            margin-right: 15px;
+        }
+
+        .school-name h1 {
+            margin: 0;
+            font-size: 22px;
+            color: #17365d;
+        }
+
+        .school-name p {
+            margin: 5px 0 0;
+            color: #d52b3f;
+            font-size: 12px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #17365d;
+            margin-left: 25px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #d52b3f;
+        }
+
+        .hero {
+            background: linear-gradient(110deg, #07549b, #365f9e, #d94b62);
+            padding: 75px 8%;
+            color: white;
+        }
+
+        .hero-box {
+            max-width: 650px;
+            background-color: rgba(0, 48, 100, 0.55);
+            padding: 30px;
+            border-left: 6px solid #e52c3e;
+            border-radius: 3px;
+        }
+
+        .hero-box p {
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin: 0 0 12px;
+        }
+
+        .hero-box h2 {
+            font-size: 38px;
+            margin: 0 0 15px;
+        }
+
+        .hero-box span {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .content {
+            width: 85%;
+            max-width: 1100px;
+            margin: 50px auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title p {
+            color: #d14a59;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+            margin: 0;
+            color: #17365d;
+        }
+
+        .about-card {
+            background-color: white;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 5px 18px #dddddd;
+            margin-bottom: 35px;
+        }
+
+        .about-card img {
+            display: block;
+            width: 300px;
+            height: 200px;
+            object-fit: contain;
+            margin: 0 auto 25px;
+        }
+
+        .about-card p {
+            color: #555555;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .info-card {
+            background-color: white;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 5px 18px #dddddd;
+            margin-bottom: 35px;
+        }
+
+        .info-card h3 {
+            color: #17365d;
+            border-left: 5px solid #e3263b;
+            padding-left: 12px;
+            margin-bottom: 25px;
+        }
+
+        .info-card ul {
+            color: #555555;
+            line-height: 1.8;
+            padding-left: 25px;
+        }
+
+        .officer-card {
+            background-color: #f7f8fc;
+            padding: 20px;
+            border-left: 4px solid #07549b;
+            margin-bottom: 15px;
+        }
+
+        .officer-card dt {
+            font-weight: bold;
+            color: #17365d;
+            margin-bottom: 5px;
+        }
+
+        .officer-card dd {
+            margin: 0;
+            color: #555555;
+        }
+
+        .back-button {
+            text-align: center;
+            margin: 30px 0 60px;
+        }
+
+        .back-button a {
+            display: inline-block;
+            background-color: #e3263b;
+            color: white;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 3px 8px #cccccc;
+        }
+
+        .back-button a:hover {
+            background-color: #b91e30;
+        }
+
+        footer {
+            background-color: #17365d;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 12px;
+        }
+
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .school-name {
+                margin-bottom: 20px;
+            }
+
+            nav a {
+                margin: 8px;
+            }
+
+            .hero-box h2 {
+                font-size: 30px;
+            }
+
+            .about-card img {
+                width: 100%;
+                height: auto;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="topbar">
+        <span>LAS PIÑAS NATIONAL HIGH SCHOOL - ALMANZA</span>
+        <span>OFFICIAL SCHOOL WEBSITE</span>
+    </div>
+
+    <header>
+
+        <div class="school-name">
+
+            <img src="SCHOOLLOGO.jpg" alt="School Logo">
+
+            <div>
+                <h1>Las Piñas National High School - Almanza</h1>
+                <p>Excellence • Leadership • Service</p>
+            </div>
+
+        </div>
+
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="index.html">ABOUT</a>
+            <a href="index.html">ACADEMICS</a>
+            <a href="index.html">STUDENT LIFE</a>
+        </nav>
+
+    </header>
+
+
+    <section class="hero">
+
+        <div class="hero-box">
+
+            <p>STUDENT ORGANIZATION</p>
+
+            <h2>Girl Scouts of the Philippines</h2>
+
+            <span>
+                Developing character, leadership, responsibility, teamwork,
+                and a spirit of service among young women.
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <main class="content">
+
+        <div class="section-title">
+
+            <p>GSP • STUDENT ORGANIZATION</p>
+
+            <h2>Girl Scouts of the Philippines</h2>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <img src="GSP.jpg"
+                 alt="This is the logo of the Girl Scouts of the Philippines">
+
+            <dl>
+
+                <dt><b>Girl Scouts of the Philippines Adviser</b></dt>
+
+                <dd>Elizabeth Pacaldo</dd>
+
+            </dl>
+
+            <p>
+                Girl Scouting is a worldwide movement that provides girls and young women,
+                aged 4 to 21 years old, a non-formal educational program based on character
+                development and the ideals of service. The club's mission is to help young
+                women prepare for future responsibilities. This club offers a non-formal
+                educational program focused on character development and service.
+            </p>
+
+            <p>
+                The club's objectives are to develop leadership skills and character among
+                members, promote community service and public engagement, encourage personal
+                growth, enhance responsibility, and improve teamwork.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>Club Activities</h3>
+
+            <ul>
+
+                <li>
+                    Basic First Aid: Mastering bandaging and wound treatment
+                    during emergencies.
+                </li>
+
+                <li>
+                    Drill Exercises: Participating in earthquake drills to learn
+                    what to do before, during, and after emergencies.
+                </li>
+
+                <li>
+                    Leading flag ceremonies at school and assisting students.
+                </li>
+
+                <li>
+                    Participating in tree planting, Brigada Eskwela, clean-up
+                    drives, and other community service activities.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>GSP Adviser</h3>
+
+            <div class="officer-card">
+
+                <dl>
+
+                    <dt>Girl Scouts of the Philippines Adviser</dt>
+
+                    <dd>Elizabeth Pacaldo</dd>
+
+                </dl>
+
+            </div>
+
+        </div>
+
+
+        <div class="back-button">
+
+            <a href="index.html">Back to Home</a>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        Las Piñas National High School - Almanza<br>
+        Student Organizations • Girl Scouts of the Philippines
+
+    </footer>
+
+</body>
+
+</html>
