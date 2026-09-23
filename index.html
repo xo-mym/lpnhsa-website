@@ -595,30 +595,26 @@ footer:before{content:"";display:block;width:90px;height:3px;background:linear-g
 </div><div class="copyright">© 2026 • LPNHS — Almanza • Student Website Project</div></footer>
 <div id="lightbox"><button class="close-lightbox" id="close-lightbox">×</button><img alt="School moment enlarged" id="lightbox-img" src=""/></div>
 <script>
-const menuButtons=document.querySelectorAll(".menu-button"),dropdowns=document.querySelectorAll(".dropdown"),mobileButton=document.getElementById("mobile-menu-button"),mainNav=document.getElementById("main-nav");
-function closeMenus(){dropdowns.forEach(x=>x.classList.remove("open"));menuButtons.forEach(x=>{x.classList.remove("active");x.setAttribute("aria-expanded","false")})}
-menuButtons.forEach(btn=>btn.addEventListener("click",e=>{e.stopPropagation();let m=document.getElementById(btn.dataset.menu),open=m.classList.contains("open");closeMenus();if(!open){m.classList.add("open");btn.classList.add("active");btn.setAttribute("aria-expanded","true")}}));
-document.addEventListener("click",e=>{if(!e.target.closest("nav"))closeMenus()});
-document.querySelectorAll(".dropdown a,a[href^='#']").forEach(a=>a.addEventListener("click",()=>{closeMenus();mainNav.classList.remove("mobile-open")}));
-mobileButton.addEventListener("click",()=>mainNav.classList.toggle("mobile-open"));
 
 const welcome=document.getElementById("welcome-screen"),enter=document.getElementById("welcome-enter");
 enter.addEventListener("click",()=>{sessionStorage.setItem("lpnsa_has_entered","true");welcome.classList.add("hide")});
 if(sessionStorage.getItem("lpnsa_has_entered")==="true")welcome.classList.add("hide");
 
 const mottoText=document.getElementById("motto-text");
-const mottos=[
-  "learn something new, create something meaningful, and leave a little good behind.",
-  "small moments can become the stories we remember from school.",
-  "every student brings a different idea, talent, and story to the community.",
-  "this website is a digital scrapbook of the LPNHS-Almanza experience."
-];
-let mottoIndex=0;
-setInterval(()=>{
-  mottoIndex=(mottoIndex+1)%mottos.length;
-  mottoText.style.opacity="0";
-  setTimeout(()=>{mottoText.textContent=mottos[mottoIndex];mottoText.style.opacity="1"},180);
-},4200);
+if(mottoText){
+  const mottos=[
+    "learn something new, create something meaningful, and leave a little good behind.",
+    "small moments can become the stories we remember from school.",
+    "every student brings a different idea, talent, and story to the community.",
+    "this website is a digital scrapbook of the LPNHS-Almanza experience."
+  ];
+  let mottoIndex=0;
+  setInterval(()=>{
+    mottoIndex=(mottoIndex+1)%mottos.length;
+    mottoText.style.opacity="0";
+    setTimeout(()=>{mottoText.textContent=mottos[mottoIndex];mottoText.style.opacity="1"},180);
+  },4200);
+}
 
 const progress=document.getElementById("progress");
 window.addEventListener("scroll",()=>{let h=document.documentElement.scrollHeight-innerHeight;progress.style.width=(h>0?(scrollY/h)*100:0)+"%"});
