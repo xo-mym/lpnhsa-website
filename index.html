@@ -54,9 +54,9 @@ header{
 .brand{display:flex;align-items:center;gap:12px}.brand img{width:58px;height:58px;object-fit:contain}
 .brand h1{font-size:17px;line-height:1.15;color:#073b78}.brand p{font-size:9px;color:#d71920;font-weight:800;letter-spacing:1.6px}
 nav>ul{display:flex;align-items:center;list-style:none;gap:2px}nav>ul>li{position:relative}
-nav a,.menu-button{border:0;background:none;padding:9px 10px;color:#073b78;font-size:11px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;line-height:1.2}
+nav a,.menu-button{border:0;background:none;padding:9px 10px;color:#073b78;font-size:11px;font-weight:800;cursor:pointer}
 nav a:hover,.menu-button:hover,.menu-button.active{color:#d71920}
-.menu-button::after{content:none}
+.menu-button::after{content:" ▾";font-size:8px}
 .dropdown{display:none;position:absolute;top:100%;left:0;width:245px;background:#fff;border:1px solid #e3ebf4;border-top:4px solid #d71920;box-shadow:0 20px 40px #102a4320;list-style:none;border-radius:0 0 12px 12px;overflow:hidden}
 .dropdown.open{display:block}.dropdown a{display:block;padding:11px 14px;color:#17365d;font-weight:600;border-bottom:1px solid #edf1f6}
 .dropdown a:hover{background:#f4f8fd;color:#d71920}
@@ -119,6 +119,28 @@ footer{background:#031e40;color:#fff;padding:55px 8% 25px}.footer-grid{display:g
 
 #lightbox{position:fixed;inset:0;background:#03152eee;z-index:5000;display:none;place-items:center;padding:25px}#lightbox.open{display:grid}#lightbox img{max-width:min(1000px,92vw);max-height:84vh;border-radius:18px;box-shadow:0 30px 80px #0008}.close-lightbox{position:absolute;top:22px;right:28px;color:#fff;background:#ffffff18;border:1px solid #fff3;border-radius:50%;width:42px;height:42px;font-size:22px;cursor:pointer}
 
+/* CREATIVE POLISH */
+header{box-shadow:0 8px 28px rgba(6,46,99,.07)}
+.hero{isolation:isolate}
+.hero:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-120px;top:70px;background:radial-gradient(circle,#ffffff1f 0 2px,transparent 3px);background-size:22px 22px;opacity:.45;z-index:1}
+.hero-content{animation:heroIn .8s ease both}
+@keyframes heroIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.quick-wrap{margin-top:-48px}
+.quick-grid{position:relative;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-top:4px solid #d71920}
+.quick-card{position:relative}
+.quick-card:after{content:"";position:absolute;right:16px;top:16px;width:28px;height:28px;border-radius:50%;background:#0b4f9c0a;border:1px solid #0b4f9c12}
+.section-head h2{letter-spacing:-.8px}
+.about-photo{box-shadow:0 24px 60px rgba(6,46,99,.16)}
+.club-card,.hymn-card,.contact-card,.feature,.community-card{transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
+.club-card:hover,.hymn-card:hover,.contact-card:hover{border-color:#b8cde4}
+.moments{position:relative}
+.moments:before{content:"";position:absolute;left:8%;top:48px;width:70px;height:4px;background:#d71920;border-radius:99px}
+.team-card{position:relative;overflow:hidden}
+.team-card:after{content:"LPNHS • ALMANZA";position:absolute;right:-25px;bottom:18px;transform:rotate(-90deg);font-size:9px;letter-spacing:3px;color:#ffffff30;font-weight:900}
+footer{position:relative}
+footer:before{content:"";display:block;width:90px;height:3px;background:linear-gradient(90deg,#d71920,#f2c86b);margin-bottom:28px;border-radius:99px}
+@media(max-width:750px){.quick-wrap{margin-top:-30px}.hero:before{display:none}.moments:before{left:6%}}
+
 @media(max-width:1050px){nav>ul{gap:0}.quick-grid,.community-grid,.hymn-grid{grid-template-columns:1fr 1fr}.about{grid-template-columns:1fr}.club-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:750px){
   .top-bar{display:none}header{padding:11px 5%;top:4px}.brand h1{font-size:14px}.brand p{font-size:8px}.brand img{width:52px;height:52px}.mobile-menu-button{display:block}nav{display:none;width:100%}nav.mobile-open{display:block}nav>ul{display:block}nav>ul>li{border-top:1px solid #edf1f5}nav a,.menu-button{width:100%;text-align:left;padding:12px}.dropdown{position:static;width:100%;box-shadow:none;border-top:0;border-left:4px solid #d71920;border-radius:0;background:#f8fafc}
@@ -126,39 +148,198 @@ footer{background:#031e40;color:#fff;padding:55px 8% 25px}.footer-grid{display:g
   section{padding:70px 6%}.about-photo{min-height:330px}.about-copy h2{font-size:34px}.feature-list{grid-template-columns:1fr}.community-grid,.club-grid,.hymn-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}.gallery{display:block}.gallery-item{min-height:250px;margin-bottom:10px}.team-card{display:block;text-align:center}.lead-avatar{margin:0 auto 18px}.form-row{grid-template-columns:1fr;gap:0}.form{padding:25px 19px}
 }
 
-/* Clickable club category cards */
-.club-choice{padding:0}
+/* Personalized school welcome hub */
+.school-history{
+  padding:58px 7% 68px;
+  background:linear-gradient(180deg,#f7f9fc 0%,#fff 100%);
+}
+.history-wrap{max-width:1120px;margin:auto}
+.history-intro{text-align:center;max-width:720px;margin:0 auto 30px}
+.history-kicker{
+  display:inline-block;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:2px;
+  color:#b21f2d;
+  margin-bottom:8px;
+}
+.history-intro h2{
+  margin:0;
+  color:#102a43;
+  font-size:clamp(28px,4vw,42px);
+  line-height:1.1;
+}
+.history-intro h2 span{color:#b21f2d}
+.history-intro p{
+  margin:13px auto 0;
+  color:#64748b;
+  line-height:1.7;
+}
+.history-card{
+  display:grid;
+  grid-template-columns:245px 1fr;
+  background:#fff;
+  border:1px solid #e5eaf0;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 12px 32px rgba(16,42,67,.08);
+}
+.history-year{
+  position:relative;
+  padding:34px 28px;
+  background:#102a43;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  overflow:hidden;
+}
+.history-year:after{
+  content:"";
+  position:absolute;
+  width:190px;
+  height:190px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:50%;
+  right:-90px;
+  bottom:-70px;
+}
+.history-year span{
+  font-size:10px;
+  letter-spacing:2px;
+  font-weight:800;
+  opacity:.7;
+}
+.history-year strong{
+  margin-top:15px;
+  font-size:29px;
+  line-height:1.05;
+  letter-spacing:.5px;
+}
+.history-year i{
+  width:45px;
+  height:3px;
+  background:#b21f2d;
+  margin-top:22px;
+  display:block;
+}
+.history-content{padding:34px 38px}
+.history-label{
+  color:#b21f2d;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1.7px;
+}
+.history-content h3{
+  color:#102a43;
+  font-size:25px;
+  line-height:1.25;
+  margin:10px 0 13px;
+  max-width:680px;
+}
+.history-content>p{
+  color:#657789;
+  line-height:1.75;
+  margin:0 0 10px;
+  max-width:780px;
+}
+.history-detail{
+  margin-top:22px;
+  border-top:1px solid #e7ecf1;
+}
+.history-more{
+  width:100%;
+  padding:16px 0;
+  border:0;
+  background:transparent;
+  color:#102a43;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1.2px;
+  cursor:pointer;
+  text-align:left;
+}
+.history-plus{
+  font-size:21px;
+  font-weight:400;
+  transition:transform .2s ease;
+}
+.history-detail.open .history-plus{transform:rotate(45deg)}
+.history-more-content{
+  display:none;
+  padding:0 0 8px;
+}
+.history-detail.open .history-more-content{display:block}
+.history-more-content p{
+  color:#657789;
+  line-height:1.7;
+  font-size:13px;
+  margin:0 0 9px;
+}
+@media(max-width:1050px){.school-hub{padding:0 6%}.hub-grid{grid-template-columns:1fr 1fr}.hub-card.featured{grid-column:span 2}}
+@media(max-width:750px){.school-hub{padding:0 6%;margin-top:-25px}.hub-panel{padding:21px 17px;border-radius:20px}.hub-top{display:block}.hub-chip{display:inline-block;margin-top:13px}.hub-grid{grid-template-columns:1fr 1fr}.hub-card.featured{grid-column:span 2}.hub-card{min-height:135px;padding:16px}.hub-motto{font-size:9px}}
+@media(max-width:500px){.hub-grid{grid-template-columns:1fr}.hub-card.featured{grid-column:auto}}
+
+@media (max-width:700px){.school-feature{padding:45px 5% 52px}.feature-grid{grid-template-columns:1fr}.feature-main{padding:24px}.feature-facts{flex-direction:column}}
+@media (max-width:700px){
+  .school-history{padding:45px 5% 52px}
+  .history-card{grid-template-columns:1fr}
+  .history-year{min-height:150px;padding:25px}
+  .history-content{padding:27px 24px}
+  .history-content h3{font-size:22px}
+}
+
+/* EXPANDABLE CLUB CARDS */
+.club-choice{overflow:visible}
 .club-card-button{
   width:100%;
   border:0;
   background:transparent;
   color:inherit;
   text-align:left;
-  padding:25px;
+  padding:0;
   cursor:pointer;
-  position:relative;
 }
-.club-card-button h3{color:#073b78;font-size:17px}
-.club-card-button p{font-size:12px;color:#6a7d90;margin:8px 0 15px}
-.club-card-button span{font-size:10px;color:#d71920;font-weight:900}
+.club-card-button h3,.club-card-button p{pointer-events:none}
+.club-card-button span{
+  display:inline-block;
+  margin-top:14px;
+  color:#b21f2d;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1px;
+}
 .club-options{
   display:none;
-  margin:0 25px 22px;
-  border-top:1px solid #e1eaf3;
-  padding-top:12px;
+  margin-top:18px;
+  padding-top:14px;
+  border-top:1px solid #e6ebf0;
 }
-.club-options.open{display:grid;gap:7px}
+.club-choice.open .club-options{display:flex;flex-direction:column;gap:8px}
 .club-options a{
   display:block;
   padding:10px 12px;
   border-radius:9px;
-  background:#f4f8fd;
-  color:#073b78;
-  font-size:11px;
-  font-weight:800;
+  background:#f5f7fa;
+  color:#102a43;
+  font-size:12px;
+  font-weight:700;
+  text-decoration:none;
+  transition:.2s ease;
 }
-.club-options a:hover{background:#e7f0fa;color:#d71920}
+.club-options a:hover{
+  background:#102a43;
+  color:#fff;
+  transform:translateX(3px);
+}
+.club-choice.open .club-card-button span{color:#102a43}
 
+@media (max-width:700px){
+  .club-options a{font-size:11px;padding:10px}
+}
 </style>
 </head>
 <body>
@@ -176,11 +357,7 @@ footer{background:#031e40;color:#fff;padding:55px 8% 25px}.footer-grid{display:g
   </div>
 </div>
 
-<div class="top-bar">
-  <a href="https://www.google.com/maps/search/?api=1&query=Lazo+St%2C+Brgy.+Almanza+Uno%2C+Las+Pi%C3%B1as+City" target="_blank" rel="noopener">📍 Lazo St., Brgy. Almanza Uno, Las Piñas City</a>
-  <a href="tel:88282886">☎ 8 828-28-86</a>
-  <span>School ID: 320306</span>
-</div>
+
 
 <header>
   <div class="brand">
@@ -193,8 +370,6 @@ footer{background:#031e40;color:#fff;padding:55px 8% 25px}.footer-grid{display:g
       <li><a href="#home">HOME</a></li>
       <li><button class="menu-button" data-menu="about-menu">ABOUT</button><ul class="dropdown" id="about-menu">
         <li><a href="MISSION_VISION.html">Mission &amp; Vision</a></li><li><a href="ORG_CHART.html">Organizational Chart</a></li>
-        <li><a href="ALMANZIANS_HYMN.html">Almanzians Hymn</a></li><li><a href="las_pinas_hymn.html">Las Piñas Hymn</a></li>
-        <li><a href="ncr_hymn.html">NCR Hymn</a></li><li><a href="national_anthem.html">National Anthem</a></li>
       </ul></li>
       <li><button class="menu-button" data-menu="academics-menu">ACADEMICS</button><ul class="dropdown" id="academics-menu">
         <li><a href="SECTION_LIST.html">Grade Levels &amp; Sections</a></li><li><a href="MIM.html">Mathematics Club</a></li>
@@ -205,7 +380,13 @@ footer{background:#031e40;color:#fff;padding:55px 8% 25px}.footer-grid{display:g
         <li><a href="CIC (1).html">CIC Club</a></li><li><a href="GSP.html">Girl Scouts</a></li><li><a href="BSP.html">Boy Scouts</a></li>
         <li><a href="GLEE.html">Glee Club</a></li><li><a href="AFDT_Club.html">Folkloric Dance Troupe</a></li><li><a href="YoungFarmersClub.html">Young Farmers Club</a></li><li><a href="g3_project_YES-O.html">YES-O Club</a></li>
       </ul></li>
-      <li><a href="#hymns">HYMNS</a></li><li><a href="#team">TEAM</a></li><li><a href="#feedback">FEEDBACK</a></li><li><a href="#contact">CONTACT</a></li>
+      <li><button class="menu-button" data-menu="hymns-menu">HYMNS</button><ul class="dropdown" id="hymns-menu">
+        <li><a href="ALMANZIANS_HYMN.html">Almanzians Hymn</a></li><li><a href="las_pinas_hymn.html">Las Piñas Hymn</a></li>
+        <li><a href="ncr_hymn.html">NCR Hymn</a></li><li><a href="national_anthem.html">National Anthem</a></li>
+      </ul></li>
+      <li><button class="menu-button" data-menu="team-menu">TEAM</button><ul class="dropdown" id="team-menu">
+        <li><a href="credits.html">Website Team &amp; Credits</a></li>
+      </ul></li>
     </ul>
   </nav>
 </header>
@@ -215,18 +396,77 @@ footer{background:#031e40;color:#fff;padding:55px 8% 25px}.footer-grid{display:g
   <div class="hero-content">
     <div class="hero-kicker">WELCOME TO LPNHS — ALMANZA</div>
     <h2>Learn. Grow.<br><span>Lead.</span></h2>
-    <p>A student-centered digital space celebrating learning, leadership, creativity, organizations, school memories, and the people behind the LPNHS-Almanza community.</p>
-    <div class="hero-actions"><a class="btn btn-red" href="#clubs">EXPLORE STUDENT LIFE →</a><a class="btn btn-ghost" href="#hymns">LISTEN TO OUR HYMNS</a></div>
+    <p>A student-centered digital space celebrating learning, leadership, creativity, organizations, school memories, and the people who make the LPNHS-Almanza community special.</p>
   </div>
   <div class="hero-badge"><strong>320306</strong><small>SCHOOL ID • ALMANZA</small></div>
 </section>
 
-<div class="quick-wrap"><div class="quick-grid">
-  <div class="quick-card"><div class="quick-num">01 / SCHOOL</div><h3>Information</h3><p>Mission, vision and school details.</p><a href="MISSION_VISION.html">VIEW CLUB →</a></div>
-  <div class="quick-card"><div class="quick-num">02 / ACADEMICS</div><h3>Grade Levels</h3><p>View sections and academic pages.</p><a href="SECTION_LIST.html">VIEW SECTIONS →</a></div>
-  <div class="quick-card"><div class="quick-num">03 / COMMUNITY</div><h3>Student Life</h3><p>Meet clubs and organizations.</p><a href="#clubs">DISCOVER →</a></div>
-  <div class="quick-card"><div class="quick-num">04 / CULTURE</div><h3>School Hymns</h3><p>Listen to the music of our community.</p><a href="#hymns">LISTEN →</a></div>
-</div></div>
+<section class="school-history" aria-label="History of Las Piñas National High School - Almanza">
+  <div class="history-wrap">
+    <div class="history-intro">
+      <span class="history-kicker">OUR SCHOOL • OUR STORY</span>
+      <h2>The Story of <span>LPNHS-Almanza</span></h2>
+      <p>A glimpse into the history and identity of Las Piñas National High School – Almanza.</p>
+    </div>
+
+    <div class="history-card">
+      <div class="history-year">
+        <span>HISTORY</span>
+        <strong>LPNHS<br>ALMANZA</strong>
+        <i></i>
+      </div>
+
+      <div class="history-content">
+        <div class="history-label">A SCHOOL WITH A STORY</div>
+        <h3>From its beginnings to the community it serves today.</h3>
+        <p>
+          Las Piñas National High School – Almanza is part of the educational community
+          that serves learners in Las Piñas. Its story reflects the growth of the school,
+          its students, teachers, and the community around it.
+        </p>
+        <p>
+          Through the years, the school has continued to provide a place where students
+          learn, build friendships, discover their talents, and take part in activities
+          that shape their school experience.
+        </p>
+
+        <div class="history-detail">
+          <button type="button" class="history-more" aria-expanded="false">
+            <span>READ MORE ABOUT OUR HISTORY</span>
+            <span class="history-plus">+</span>
+          </button>
+          <div class="history-more-content">
+            <p>
+              Las Piñas National High School – Almanza stands as a public secondary school
+              serving learners in Almanza Uno, Las Piñas City. Its story is closely connected
+              to the growth of the community it serves and to the continuing need for accessible
+              public education in the area.
+            </p>
+            <p>
+              As the school community grew, LPNHS-Almanza became more than a place for classroom
+              instruction. Generations of students and teachers became part of its story through
+              academics, student organizations, leadership activities, cultural programs,
+              sports, service, and other experiences that shaped everyday school life.
+            </p>
+            <p>
+              The identity of the school has also been carried forward by its students and
+              alumni. Each school year adds new experiences to that history—from the lessons
+              learned inside the classroom to the friendships, achievements, traditions, and
+              memories created throughout the campus.
+            </p>
+            <p>
+              Today, LPNHS-Almanza continues its role as part of the local educational community,
+              giving young people a place to learn, develop their abilities, participate in
+              school life, and prepare for the responsibilities that come beyond high school.
+              Its history is therefore not only about the institution itself, but also about
+              the many people who have helped make the school what it is.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="about"><div class="about">
   <div class="about-photo" role="img" aria-label="School photo"></div>
@@ -250,91 +490,92 @@ footer{background:#031e40;color:#fff;padding:55px 8% 25px}.footer-grid{display:g
 </div></section>
 
 <section class="clubs-bg" id="clubs">
-  <div class="section-head">
-    <div class="tag">STUDENT LIFE</div>
-    <h2>Clubs &amp; Organizations</h2>
-    <p>Choose a group below to see the student organizations under each category.</p>
-  </div>
+<div class="section-head">
+  <div class="tag">STUDENT LIFE</div>
+  <h2>Clubs &amp; Organizations</h2>
+  <p>Choose a category to see the organizations under it.</p>
+</div>
 
-  <div class="club-grid">
-    <div class="club-card club-choice">
-      <button class="club-card-button" type="button" data-club-menu="academic-clubs">
-        <h3>Academic Clubs</h3>
-        <p>Math, ICT, journalism, and other academic-related organizations.</p>
-        <span>VIEW CLUBS →</span>
-      </button>
-      <div class="club-options" id="academic-clubs">
-        <a href="MIM.html">MIM — Mathematics</a>
-        <a href="ICT_CLUB.html">ICT Club</a>
-        <a href="g3_project_TheScribe.html">The Scribe</a>
-        <a href="Ang_Tinig.html">Ang Tinig</a>
-      </div>
-    </div>
-
-    <div class="club-card club-choice">
-      <button class="club-card-button" type="button" data-club-menu="leadership-clubs">
-        <h3>Leadership &amp; Service</h3>
-        <p>Organizations focused on leadership, service, responsibility, and participation.</p>
-        <span>VIEW ORGANIZATIONS →</span>
-      </button>
-      <div class="club-options" id="leadership-clubs">
-        <a href="SSLG.html">SSLG</a>
-        <a href="g3_project_ESPCLUB.html">ESP Club</a>
-        <a href="BKD.html">BKD Club</a>
-      </div>
-    </div>
-
-    <div class="club-card club-choice">
-      <button class="club-card-button" type="button" data-club-menu="scouting-clubs">
-        <h3>Scouting</h3>
-        <p>Student organizations that develop teamwork, discipline, responsibility, and leadership.</p>
-        <span>VIEW GROUPS →</span>
-      </button>
-      <div class="club-options" id="scouting-clubs">
-        <a href="GSP.html">Girl Scouts</a>
-        <a href="BSP.html">Boy Scouts</a>
-      </div>
-    </div>
-
-    <div class="club-card club-choice">
-      <button class="club-card-button" type="button" data-club-menu="arts-clubs">
-        <h3>Arts &amp; Culture</h3>
-        <p>Music, dance, performance, and cultural activities for student expression.</p>
-        <span>VIEW ORGANIZATIONS →</span>
-      </button>
-      <div class="club-options" id="arts-clubs">
-        <a href="GLEE.html">Glee Club</a>
-        <a href="AFDT_Club.html">Folkloric Dance Troupe</a>
-      </div>
-    </div>
-
-    <div class="club-card club-choice">
-      <button class="club-card-button" type="button" data-club-menu="environment-clubs">
-        <h3>Environment</h3>
-        <p>Activities that promote environmental awareness and responsibility.</p>
-        <span>VIEW GROUPS →</span>
-      </button>
-      <div class="club-options" id="environment-clubs">
-        <a href="g3_project_YES-O.html">YES-O Club</a>
-      </div>
-    </div>
-
-    <div class="club-card club-choice">
-      <button class="club-card-button" type="button" data-club-menu="farming-clubs">
-        <h3>Young Farmers</h3>
-        <p>Activities related to agriculture, sustainability, and practical skills.</p>
-        <span>VIEW ORGANIZATION →</span>
-      </button>
-      <div class="club-options" id="farming-clubs">
-        <a href="YoungFarmersClub.html">Young Farmers Club</a>
-      </div>
+<div class="club-grid">
+  <div class="club-card club-choice">
+    <button class="club-card-button" type="button" data-club-menu="academic-clubs" aria-expanded="false">
+      <h3>Academic Clubs</h3>
+      <p>Math, ICT, journalism, and other academic-related organizations.</p>
+      <span>VIEW CLUBS →</span>
+    </button>
+    <div class="club-options" id="academic-clubs">
+      <a href="MIM.html">MIM — Mathematics</a>
+      <a href="ICT_CLUB.html">ICT Club</a>
+      <a href="g3_project_TheScribe.html">The Scribe</a>
+      <a href="Ang_Tinig.html">Ang Tinig</a>
     </div>
   </div>
+
+  <div class="club-card club-choice">
+    <button class="club-card-button" type="button" data-club-menu="leadership-clubs" aria-expanded="false">
+      <h3>Leadership &amp; Service</h3>
+      <p>Organizations focused on leadership, service, responsibility, and participation.</p>
+      <span>VIEW ORGANIZATIONS →</span>
+    </button>
+    <div class="club-options" id="leadership-clubs">
+      <a href="SSLG.html">SSLG</a>
+      <a href="g3_project_ESPCLUB.html">ESP Club</a>
+      <a href="BKD.html">BKD Club</a>
+      <a href="CIC (1).html">CIC Club</a>
+    </div>
+  </div>
+
+  <div class="club-card club-choice">
+    <button class="club-card-button" type="button" data-club-menu="scouting-clubs" aria-expanded="false">
+      <h3>Scouting</h3>
+      <p>Student organizations that develop teamwork, discipline, responsibility, and leadership.</p>
+      <span>VIEW GROUPS →</span>
+    </button>
+    <div class="club-options" id="scouting-clubs">
+      <a href="GSP.html">Girl Scouts</a>
+      <a href="BSP.html">Boy Scouts</a>
+    </div>
+  </div>
+
+  <div class="club-card club-choice">
+    <button class="club-card-button" type="button" data-club-menu="arts-clubs" aria-expanded="false">
+      <h3>Arts &amp; Culture</h3>
+      <p>Music, dance, performance, and cultural activities for student expression.</p>
+      <span>VIEW ORGANIZATIONS →</span>
+    </button>
+    <div class="club-options" id="arts-clubs">
+      <a href="GLEE.html">Glee Club</a>
+      <a href="AFDT_Club.html">Folkloric Dance Troupe</a>
+    </div>
+  </div>
+
+  <div class="club-card club-choice">
+    <button class="club-card-button" type="button" data-club-menu="environment-clubs" aria-expanded="false">
+      <h3>Environment</h3>
+      <p>Activities that promote environmental awareness and responsibility.</p>
+      <span>VIEW GROUPS →</span>
+    </button>
+    <div class="club-options" id="environment-clubs">
+      <a href="g3_project_YES-O.html">YES-O Club</a>
+    </div>
+  </div>
+
+  <div class="club-card club-choice">
+    <button class="club-card-button" type="button" data-club-menu="farming-clubs" aria-expanded="false">
+      <h3>Young Farmers</h3>
+      <p>Activities related to agriculture, sustainability, and practical skills.</p>
+      <span>VIEW ORGANIZATION →</span>
+    </button>
+    <div class="club-options" id="farming-clubs">
+      <a href="YoungFarmersClub.html">Young Farmers Club</a>
+    </div>
+  </div>
+</div>
 </section>
 
 <section class="hymns" id="hymns"><div class="section-head"><div class="tag">SOUNDS OF OUR SCHOOL</div><h2>Hymns &amp; National Anthem</h2><p>A dedicated space for the music connected to LPNHS, Las Piñas, NCR, and the Philippines.</p></div>
 <div class="hymn-grid">
-  <div class="hymn-card"><span>SCHOOL</span><h3>Almanzians Hymn</h3><a href="ALMANZIANS_HYMN.html">OPEN PAGE →</a></div>
+  <div class="hymn-card"><span>SCHOOL</span><h3>Almanzians Hymn</h3><a href="almanzians_hymn.html">OPEN PAGE →</a></div>
   <div class="hymn-card"><span>CITY</span><h3>Las Piñas Hymn</h3><a href="las_pinas_hymn.html">OPEN PAGE →</a></div>
   <div class="hymn-card"><span>REGION</span><h3>NCR Hymn</h3><a href="ncr_hymn.html">OPEN PAGE →</a></div>
   <div class="hymn-card"><span>NATION</span><h3>National Anthem</h3><a href="national_anthem.html">OPEN PAGE →</a></div>
@@ -353,7 +594,6 @@ footer{background:#031e40;color:#fff;padding:55px 8% 25px}.footer-grid{display:g
 
 <section class="feedback" id="feedback"><div class="section-head"><div class="tag" style="color:#ffb8bc">WE VALUE YOUR VOICE</div><h2>Website Feedback</h2><p>Tell the website team about your experience.</p></div>
 <form class="form" action="https://formsubmit.co/mhayumiegranados09@gmail.com" method="POST">
-  <input type="hidden" name="_next" value="https://xo-mym.github.io/lpnhsa-website/">
   <input type="hidden" name="_subject" value="LPNHS Almanza Website Feedback"><input type="hidden" name="_template" value="table">
   <input type="hidden" name="_captcha" value="true">
   <div class="form-row"><div class="form-group"><label>FULL NAME</label><input name="name" type="text" placeholder="Enter your name" required></div><div class="form-group"><label>EMAIL ADDRESS</label><input name="email" type="email" placeholder="Enter your email" required></div></div>
@@ -380,59 +620,6 @@ footer{background:#031e40;color:#fff;padding:55px 8% 25px}.footer-grid{display:g
 <div id="lightbox"><button class="close-lightbox" id="close-lightbox">×</button><img id="lightbox-img" src="" alt="School moment enlarged"></div>
 
 <script>
-
-
-
-const gradeSections = {
-  "7": ["Blessedness","Accountability","Adaptability","Altruism","Approachability","Austerity","Authenticity","Benevolence","Bravery","Calmness","Camaraderie","Caring"],
-  "8": ["Clever","Connection","Consideration","Consistency","Contentment","Cooperation","Courage","Creativity","Dependability","Determination","Dignity","Diplomacy","Discernment","Discipline"],
-  "9": ["Fairness","Faith","Family","Fearless","Fidelity","Flexibility","Forgiveness","Fortitude","Friendliness","Frugality","Fulfillment","Generosity"],
-  "10": ["Commitment","Environmentalist","Imaginative","Independence","Influence","Innovation","Integrity","Joyfulness","Justice","Kindness","Leadership"]
-};
-
-const gradeSelect = document.getElementById("grade-level");
-const sectionSelect = document.getElementById("section-select");
-
-gradeSelect.addEventListener("change", () => {
-  const sections = gradeSections[gradeSelect.value] || [];
-  sectionSelect.innerHTML = "";
-
-  const placeholder = document.createElement("option");
-  placeholder.value = "";
-  placeholder.textContent = sections.length ? "Select Section" : "Select grade level first";
-  sectionSelect.appendChild(placeholder);
-
-  sections.forEach(section => {
-    const option = document.createElement("option");
-    option.value = section;
-    option.textContent = section;
-    sectionSelect.appendChild(option);
-  });
-
-  sectionSelect.disabled = sections.length === 0;
-});
-
-const clubButtons = document.querySelectorAll(".club-card-button");
-const clubMenus = document.querySelectorAll(".club-options");
-
-function closeClubMenus(){
-  clubMenus.forEach(menu => menu.classList.remove("open"));
-}
-
-clubButtons.forEach(button => {
-  button.addEventListener("click", event => {
-    event.stopPropagation();
-    const menu = document.getElementById(button.dataset.clubMenu);
-    const isOpen = menu.classList.contains("open");
-    closeClubMenus();
-    if (!isOpen) menu.classList.add("open");
-  });
-});
-
-document.addEventListener("click", event => {
-  if (!event.target.closest(".club-choice")) closeClubMenus();
-});
-
 const menuButtons=document.querySelectorAll(".menu-button"),dropdowns=document.querySelectorAll(".dropdown"),mobileButton=document.getElementById("mobile-menu-button"),mainNav=document.getElementById("main-nav");
 function closeMenus(){dropdowns.forEach(x=>x.classList.remove("open"));menuButtons.forEach(x=>{x.classList.remove("active");x.setAttribute("aria-expanded","false")})}
 menuButtons.forEach(btn=>btn.addEventListener("click",e=>{e.stopPropagation();let m=document.getElementById(btn.dataset.menu),open=m.classList.contains("open");closeMenus();if(!open){m.classList.add("open");btn.classList.add("active");btn.setAttribute("aria-expanded","true")}}));
@@ -444,6 +631,20 @@ const welcome=document.getElementById("welcome-screen"),enter=document.getElemen
 enter.addEventListener("click",()=>{sessionStorage.setItem("lpnsa_has_entered","true");welcome.classList.add("hide")});
 if(sessionStorage.getItem("lpnsa_has_entered")==="true")welcome.classList.add("hide");
 
+const mottoText=document.getElementById("motto-text");
+const mottos=[
+  "learn something new, create something meaningful, and leave a little good behind.",
+  "small moments can become the stories we remember from school.",
+  "every student brings a different idea, talent, and story to the community.",
+  "this website is a digital scrapbook of the LPNHS-Almanza experience."
+];
+let mottoIndex=0;
+setInterval(()=>{
+  mottoIndex=(mottoIndex+1)%mottos.length;
+  mottoText.style.opacity="0";
+  setTimeout(()=>{mottoText.textContent=mottos[mottoIndex];mottoText.style.opacity="1"},180);
+},4200);
+
 const progress=document.getElementById("progress");
 window.addEventListener("scroll",()=>{let h=document.documentElement.scrollHeight-innerHeight;progress.style.width=(h>0?(scrollY/h)*100:0)+"%"});
 
@@ -451,6 +652,83 @@ const lb=document.getElementById("lightbox"),lbImg=document.getElementById("ligh
 document.querySelectorAll(".gallery-item").forEach(item=>item.addEventListener("click",()=>{lbImg.src=item.dataset.image;lb.classList.add("open")}));
 document.getElementById("close-lightbox").addEventListener("click",()=>lb.classList.remove("open"));
 lb.addEventListener("click",e=>{if(e.target===lb)lb.classList.remove("open")});
+</script>
+<script>
+const gradeSections = {
+  "7": ["Blessedness","Accountability","Adaptability","Altruism","Approachability","Austerity","Authenticity","Benevolence","Bravery","Calmness","Camaraderie","Caring"],
+  "8": ["Clever","Connection","Consideration","Consistency","Contentment","Cooperation","Courage","Creativity","Dependability","Determination","Dignity","Diplomacy","Discernment","Discipline"],
+  "9": ["Fairness","Faith","Family","Fearless","Fidelity","Flexibility","Forgiveness","Fortitude","Friendliness","Frugality","Fulfillment","Generosity"],
+  "10": ["Commitment","Environmentalist","Imaginative","Independence","Influence","Innovation","Integrity","Joyfulness","Justice","Kindness","Leadership"]
+};
+
+const gradeSelect = document.getElementById("grade-level");
+const sectionSelect = document.getElementById("section-select");
+
+if (gradeSelect && sectionSelect) {
+  gradeSelect.addEventListener("change", () => {
+    const sections = gradeSections[gradeSelect.value] || [];
+    sectionSelect.innerHTML = "";
+
+    const placeholder = document.createElement("option");
+    placeholder.value = "";
+    placeholder.textContent = sections.length ? "Select Section" : "Select grade level first";
+    sectionSelect.appendChild(placeholder);
+
+    sections.forEach(section => {
+      const option = document.createElement("option");
+      option.value = section;
+      option.textContent = section;
+      sectionSelect.appendChild(option);
+    });
+
+    sectionSelect.disabled = sections.length === 0;
+  });
+}
+</script>
+<script>document.addEventListener('DOMContentLoaded',function(){const d=document.querySelector('.feature-dropdown'),b=document.querySelector('.feature-drop-btn');if(d&&b)b.addEventListener('click',function(){const o=d.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')})});</script><script>
+document.addEventListener('DOMContentLoaded', function () {
+  const detail = document.querySelector('.history-detail');
+  const button = document.querySelector('.history-more');
+  if (detail && button) {
+    button.addEventListener('click', function () {
+      const open = detail.classList.toggle('open');
+      button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  /* Expand/collapse club categories without scrolling anywhere. */
+  document.querySelectorAll('.club-card-button').forEach(function (button) {
+    button.addEventListener('click', function () {
+      const card = button.closest('.club-choice');
+      const isOpen = card.classList.toggle('open');
+      button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+
+  /*
+    When a club page is opened, remember exactly where the student was
+    on the homepage. A Back to Home link on a club page can simply use
+    index.html, and this restores the saved position.
+  */
+  document.querySelectorAll('.club-options a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      sessionStorage.setItem('lpnhsa-home-scroll', String(window.scrollY));
+      sessionStorage.setItem('lpnhsa-home-club', this.getAttribute('href') || '');
+    });
+  });
+
+  const savedScroll = sessionStorage.getItem('lpnhsa-home-scroll');
+  if (savedScroll !== null) {
+    sessionStorage.removeItem('lpnhsa-home-scroll');
+    sessionStorage.removeItem('lpnhsa-home-club');
+    requestAnimationFrame(function () {
+      window.scrollTo(0, Number(savedScroll));
+    });
+  }
+});
 </script>
 </body>
 </html>
