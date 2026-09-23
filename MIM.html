@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 
 <html>
-
 <head>
-    <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-    <title>Math Investigatory and Modelling</title>
-
-    <style>
+<meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/>
+<title>Math Investigatory and Modelling</title>
+<style>
 
         body {
             margin: 0;
@@ -236,205 +234,153 @@
         }
 
     </style>
-
-</head>
-
+<style id="shared-nav-style">
+/* shared navigation - kept consistent across all pages */
+.shared-site-nav{position:relative;z-index:3000;}
+.shared-site-nav>ul{display:flex;align-items:center;list-style:none;gap:2px;margin:0;padding:0;}
+.shared-site-nav>ul>li{position:relative;list-style:none;}
+.shared-site-nav a,.shared-site-nav .menu-button{border:0;background:none;padding:9px 10px;color:#073b78;font-size:11px;font-weight:800;cursor:pointer;text-decoration:none;display:block;white-space:nowrap;}
+.shared-site-nav a:hover,.shared-site-nav .menu-button:hover,.shared-site-nav .menu-button.active{color:#d71920;}
+.shared-site-nav .menu-button::after{content:" ▾";font-size:8px;}
+.shared-site-nav .dropdown{display:none;position:absolute;top:100%;left:0;width:245px;background:#fff;border:1px solid #e3ebf4;border-top:4px solid #d71920;box-shadow:0 20px 40px #102a4320;list-style:none;border-radius:0 0 12px 12px;overflow:hidden;margin:0;padding:0;}
+.shared-site-nav .dropdown.open{display:block;}
+.shared-site-nav .dropdown li{list-style:none;margin:0;padding:0;}
+.shared-site-nav .dropdown a{display:block;padding:11px 14px;color:#17365d;font-weight:600;border-bottom:1px solid #edf1f6;}
+.shared-site-nav .dropdown a:hover{background:#f4f8fd;color:#d71920;}
+@media(max-width:900px){.shared-site-nav>ul{flex-wrap:wrap;justify-content:flex-end}.shared-site-nav .dropdown{position:absolute;right:0;left:auto;max-width:calc(100vw - 30px);}.shared-site-nav .dropdown a{font-size:11px;}}
+</style></head>
 <body>
-
-    <div class="topbar">
-        <span>LAS PIÑAS NATIONAL HIGH SCHOOL - ALMANZA</span>
-        <span>STUDENT ORGANIZATIONS</span>
-    </div>
-
-
-    <header>
-
-        <div class="school-name">
-
-            <img src="SCHOOLLOGO.jpg" alt="School Logo">
-
-            <div>
-
-                <h1>Las Piñas National High School - Almanza</h1>
-
-                <p>Excellence • Leadership • Service</p>
-
-            </div>
-
-        </div>
-
-
-        <nav>
-
-            <a href="index.html">HOME</a>
-            <a href="about.html">ABOUT</a>
-            <a href="#">ACADEMICS</a>
-            <a href="#">STUDENT LIFE</a>
-
-        </nav>
-
-    </header>
-
-
-    <section class="hero">
-
-        <div class="hero-box">
-
-            <p>MATHEMATICS • RESEARCH • INNOVATION</p>
-
-            <h2>Math Investigatory and Modelling</h2>
-
-            <span>
+<div class="topbar">
+<span>LAS PIÑAS NATIONAL HIGH SCHOOL - ALMANZA</span>
+<span>STUDENT ORGANIZATIONS</span>
+</div>
+<header>
+<div class="school-name">
+<img alt="School Logo" src="SCHOOLLOGO.jpg"/>
+<div>
+<h1>Las Piñas National High School - Almanza</h1>
+<p>Excellence • Leadership • Service</p>
+</div>
+</div>
+<nav class="shared-site-nav" id="main-nav">
+<ul>
+<li><a href="index.html#home">HOME</a></li>
+<li><button class="menu-button" data-menu="about-menu" type="button">ABOUT</button><ul class="dropdown" id="about-menu">
+<li><a href="MISSION_VISION.html">Mission &amp; Vision</a></li><li><a href="ORG_CHART.html">Organizational Chart</a></li>
+</ul></li>
+<li><button class="menu-button" data-menu="academics-menu" type="button">ACADEMICS</button><ul class="dropdown" id="academics-menu">
+<li><a href="SECTION_LIST.html">Grade Levels &amp; Sections</a></li><li><a href="MIM.html">Mathematics Club</a></li><li><a href="ICT_CLUB.html">ICT Club</a></li><li><a href="g3_project_TheScribe.html">The Scribe</a></li><li><a href="Ang_Tinig.html">Ang Tinig</a></li>
+</ul></li>
+<li><button class="menu-button" data-menu="student-menu" type="button">STUDENT LIFE</button><ul class="dropdown" id="student-menu">
+<li><a href="SSLG.html">SSLG</a></li><li><a href="g3_project_ESPCLUB.html">ESP Club</a></li><li><a href="BKD.html">BKD Club</a></li><li><a href="CIC (1).html">CIC Club</a></li><li><a href="GSP.html">Girl Scouts</a></li><li><a href="BSP.html">Boy Scouts</a></li><li><a href="GLEE.html">Glee Club</a></li><li><a href="AFDT_Club.html">Folkloric Dance Troupe</a></li><li><a href="YoungFarmersClub.html">Young Farmers Club</a></li><li><a href="g3_project_YES-O.html">YES-O Club</a></li>
+</ul></li>
+<li><button class="menu-button" data-menu="hymns-menu" type="button">HYMNS</button><ul class="dropdown" id="hymns-menu">
+<li><a href="ALMANZIANS_HYMN.html">Almanzians Hymn</a></li><li><a href="las_pinas_hymn.html">Las Piñas Hymn</a></li><li><a href="ncr_hymn.html">NCR Hymn</a></li><li><a href="national_anthem.html">National Anthem</a></li>
+</ul></li>
+<li><button class="menu-button" data-menu="team-menu" type="button">TEAM</button><ul class="dropdown" id="team-menu"><li><a href="credits.html">Website Team &amp; Credits</a></li></ul></li>
+</ul>
+</nav>
+</header>
+<section class="hero">
+<div class="hero-box">
+<p>MATHEMATICS • RESEARCH • INNOVATION</p>
+<h2>Math Investigatory and Modelling</h2>
+<span>
                 A student organization that brings together math lovers
                 through problem solving, research, and mathematical exploration.
             </span>
-
-        </div>
-
-    </section>
-
-
-    <main class="content">
-
-
-        <div class="section-title">
-
-            <p>MIM • STUDENT ORGANIZATION</p>
-
-            <h2>Math Investigatory and Modelling</h2>
-
-        </div>
-
-
-        <div class="about-card">
-
-            <div class="logo-container">
-
-                <img src="Mim.jpg" alt="A photo of the MIM logo">
-
-            </div>
-
-            <p>
-                <b>This is a student organization that serves as a home for math lovers.</b>
-            </p>
-
-        </div>
-
-
-        <div class="info-card">
-
-            <h3>Objectives</h3>
-
-            <p>
+</div>
+</section>
+<main class="content">
+<div class="section-title">
+<p>MIM • STUDENT ORGANIZATION</p>
+<h2>Math Investigatory and Modelling</h2>
+</div>
+<div class="about-card">
+<div class="logo-container">
+<img alt="A photo of the MIM logo" src="Mim.jpg"/>
+</div>
+<p>
+<b>This is a student organization that serves as a home for math lovers.</b>
+</p>
+</div>
+<div class="info-card">
+<h3>Objectives</h3>
+<p>
                 To hone students' skills in mathematical problems, solving, and calculations.
             </p>
-
-            <p>
+<p>
                 Through this club, students sharpen their critical thinking and creativity
                 while developing a sense of comfort and determination to study mathematics
                 in a fun and exciting way.
             </p>
-
-        </div>
-
-
-        <div class="info-card">
-
-            <h3>Club Activities</h3>
-
-            <ul>
-
-                <li>
-                    <b>Investigatory:</b>
+</div>
+<div class="info-card">
+<h3>Club Activities</h3>
+<ul>
+<li>
+<b>Investigatory:</b>
                     Investigating, doing experiments, and learning new things.
                 </li>
-
-                <li>
-                    <b>Research:</b>
+<li>
+<b>Research:</b>
                     Researching, writing research papers, and solving problems.
                 </li>
-
-                <li>
-                    <b>Mathematics:</b>
+<li>
+<b>Mathematics:</b>
                     Problem solving, geometry, algebra, and critical thinking.
                 </li>
-
-            </ul>
-
-        </div>
-
-
-        <div class="info-card">
-
-            <h3>Club Adviser</h3>
-
-            <div class="adviser">
+</ul>
+</div>
+<div class="info-card">
+<h3>Club Adviser</h3>
+<div class="adviser">
 
                 For more details, please approach our dearest Club Adviser:
                 <b>Mr. Ronnel A. Carinan</b> - Math Teacher
 
             </div>
-
-        </div>
-
-
-        <div class="info-card">
-
-            <h3>MIM Officers</h3>
-
-            <dl class="officer-list">
-
-                <dt><b>MIM Coordinator</b></dt>
-
-                <dd>Ronnel A. Carinan</dd>
-
-
-                <dt><b>MIM Officers</b></dt>
-
-                <dd><b>President:</b> Vinan</dd>
-
-                <dd><b>Vice President:</b> Villaseñor</dd>
-
-                <dd><b>Secretary:</b> Rangel</dd>
-
-                <dd><b>Treasurer:</b> Ian</dd>
-
-                <dd><b>PIO:</b> Tonette</dd>
-
-                <dd><b>Auditor:</b> NJ</dd>
-
-                <dd><b>Business Manager:</b> David</dd>
-
-                <dd><b>Grade 8 Representative:</b> David</dd>
-
-                <dd><b>Grade 9 Representative:</b> Pronda</dd>
-
-                <dd><b>Grade 10 Representative:</b> Vito</dd>
-
-            </dl>
-
-        </div>
-
-
-        <div class="back-button">
-
-            <a href="index.html">Back to Home</a>
-
-        </div>
-
-
-    </main>
-
-
-    <footer>
-
-        <p>© 2026 Las Piñas National High School - Almanza</p>
-
-        <p>Math Investigatory and Modelling • Student Organization</p>
-
-    </footer>
-
-
-</body>
-
+</div>
+<div class="info-card">
+<h3>MIM Officers</h3>
+<dl class="officer-list">
+<dt><b>MIM Coordinator</b></dt>
+<dd>Ronnel A. Carinan</dd>
+<dt><b>MIM Officers</b></dt>
+<dd><b>President:</b> Vinan</dd>
+<dd><b>Vice President:</b> Villaseñor</dd>
+<dd><b>Secretary:</b> Rangel</dd>
+<dd><b>Treasurer:</b> Ian</dd>
+<dd><b>PIO:</b> Tonette</dd>
+<dd><b>Auditor:</b> NJ</dd>
+<dd><b>Business Manager:</b> David</dd>
+<dd><b>Grade 8 Representative:</b> David</dd>
+<dd><b>Grade 9 Representative:</b> Pronda</dd>
+<dd><b>Grade 10 Representative:</b> Vito</dd>
+</dl>
+</div>
+<div class="back-button">
+<a class="back-to-home" href="index.html#home" onclick="sessionStorage.setItem('lpnsa-home-scroll',String(window.scrollY));">Back to Home</a>
+</div>
+</main>
+<footer>
+<p>© 2026 Las Piñas National High School - Almanza</p>
+<p>Math Investigatory and Modelling • Student Organization</p>
+</footer>
+<script id="shared-nav-script">
+(function(){
+  const nav=document.getElementById('main-nav');
+  if(!nav) return;
+  const buttons=nav.querySelectorAll('.menu-button');
+  function closeMenus(){buttons.forEach(btn=>{const m=document.getElementById(btn.dataset.menu);if(m)m.classList.remove('open');btn.classList.remove('active');btn.setAttribute('aria-expanded','false');});}
+  buttons.forEach(btn=>{btn.setAttribute('aria-expanded','false');btn.addEventListener('click',function(e){e.stopPropagation();const menu=document.getElementById(btn.dataset.menu);const wasOpen=menu.classList.contains('open');closeMenus();if(!wasOpen){menu.classList.add('open');btn.classList.add('active');btn.setAttribute('aria-expanded','true');}});});
+  nav.querySelectorAll('.dropdown a').forEach(a=>a.addEventListener('click',function(){
+    if(location.pathname.endsWith('index.html') || location.pathname.endsWith('/')){
+      sessionStorage.setItem('lpnsa-home-scroll',String(window.scrollY));
+    }
+    closeMenus();
+  }));
+  document.addEventListener('click',function(e){if(!e.target.closest('#main-nav'))closeMenus();});
+})();
+</script></body>
 </html>

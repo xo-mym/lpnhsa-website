@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Las Piñas National High School - Almanza</title>
 <style>
 :root{
@@ -344,279 +345,255 @@ footer:before{content:"";display:block;width:90px;height:3px;background:linear-g
   .club-options a{font-size:11px;padding:10px}
 }
 </style>
-</head>
+<style id="shared-nav-style">
+/* shared navigation - kept consistent across all pages */
+.shared-site-nav{position:relative;z-index:3000;}
+.shared-site-nav>ul{display:flex;align-items:center;list-style:none;gap:2px;margin:0;padding:0;}
+.shared-site-nav>ul>li{position:relative;list-style:none;}
+.shared-site-nav a,.shared-site-nav .menu-button{border:0;background:none;padding:9px 10px;color:#073b78;font-size:11px;font-weight:800;cursor:pointer;text-decoration:none;display:block;white-space:nowrap;}
+.shared-site-nav a:hover,.shared-site-nav .menu-button:hover,.shared-site-nav .menu-button.active{color:#d71920;}
+.shared-site-nav .menu-button::after{content:" ▾";font-size:8px;}
+.shared-site-nav .dropdown{display:none;position:absolute;top:100%;left:0;width:245px;background:#fff;border:1px solid #e3ebf4;border-top:4px solid #d71920;box-shadow:0 20px 40px #102a4320;list-style:none;border-radius:0 0 12px 12px;overflow:hidden;margin:0;padding:0;}
+.shared-site-nav .dropdown.open{display:block;}
+.shared-site-nav .dropdown li{list-style:none;margin:0;padding:0;}
+.shared-site-nav .dropdown a{display:block;padding:11px 14px;color:#17365d;font-weight:600;border-bottom:1px solid #edf1f6;}
+.shared-site-nav .dropdown a:hover{background:#f4f8fd;color:#d71920;}
+@media(max-width:900px){.shared-site-nav>ul{flex-wrap:wrap;justify-content:flex-end}.shared-site-nav .dropdown{position:absolute;right:0;left:auto;max-width:calc(100vw - 30px);}.shared-site-nav .dropdown a{font-size:11px;}}
+</style></head>
 <body>
 <div id="progress"></div>
-
 <div id="welcome-screen">
-  <div id="particles"><i class="particle p1"></i><i class="particle p2"></i><i class="particle p3"></i><i class="particle p4"></i><i class="particle p5"></i></div>
-  <div class="welcome-box">
-    <img src="SCHOOLLOGO.jpg" alt="LPNHS Almanza logo" class="welcome-logo">
-    <div class="eyebrow">WELCOME TO</div>
-    <h1>LAS PIÑAS NATIONAL HIGH SCHOOL</h1>
-    <p>ALMANZA • SCHOOL ID: 320306</p>
-    <div class="welcome-line"></div>
-    <button class="enter-btn" id="welcome-enter">ENTER LPNHS — ALMANZA</button>
-  </div>
+<div id="particles"><i class="particle p1"></i><i class="particle p2"></i><i class="particle p3"></i><i class="particle p4"></i><i class="particle p5"></i></div>
+<div class="welcome-box">
+<img alt="LPNHS Almanza logo" class="welcome-logo" src="SCHOOLLOGO.jpg"/>
+<div class="eyebrow">WELCOME TO</div>
+<h1>LAS PIÑAS NATIONAL HIGH SCHOOL</h1>
+<p>ALMANZA • SCHOOL ID: 320306</p>
+<div class="welcome-line"></div>
+<button class="enter-btn" id="welcome-enter">ENTER LPNHS — ALMANZA</button>
 </div>
-
-
-
+</div>
 <header>
-  <div class="brand">
-    <img src="SCHOOLLOGO.jpg" alt="LPNHS Almanza logo">
-    <div><h1>LAS PIÑAS NATIONAL HIGH SCHOOL</h1><p>ALMANZA • OFFICIAL SCHOOL WEBSITE</p></div>
-  </div>
-  <button class="mobile-menu-button" id="mobile-menu-button">MENU</button>
-  <nav id="main-nav">
-    <ul>
-      <li><a href="#home">HOME</a></li>
-      <li><button class="menu-button" data-menu="about-menu">ABOUT</button><ul class="dropdown" id="about-menu">
-        <li><a href="MISSION_VISION.html">Mission &amp; Vision</a></li><li><a href="ORG_CHART.html">Organizational Chart</a></li>
-      </ul></li>
-      <li><button class="menu-button" data-menu="academics-menu">ACADEMICS</button><ul class="dropdown" id="academics-menu">
-        <li><a href="SECTION_LIST.html">Grade Levels &amp; Sections</a></li><li><a href="MIM.html">Mathematics Club</a></li>
-        <li><a href="ICT_CLUB.html">ICT Club</a></li><li><a href="g3_project_TheScribe.html">The Scribe</a></li><li><a href="Ang_Tinig.html">Ang Tinig</a></li>
-      </ul></li>
-      <li><button class="menu-button" data-menu="student-menu">STUDENT LIFE</button><ul class="dropdown" id="student-menu">
-        <li><a href="SSLG.html">SSLG</a></li><li><a href="g3_project_ESPCLUB.html">ESP Club</a></li><li><a href="BKD.html">BKD Club</a></li>
-        <li><a href="CIC (1).html">CIC Club</a></li><li><a href="GSP.html">Girl Scouts</a></li><li><a href="BSP.html">Boy Scouts</a></li>
-        <li><a href="GLEE.html">Glee Club</a></li><li><a href="AFDT_Club.html">Folkloric Dance Troupe</a></li><li><a href="YoungFarmersClub.html">Young Farmers Club</a></li><li><a href="g3_project_YES-O.html">YES-O Club</a></li>
-      </ul></li>
-      <li><button class="menu-button" data-menu="hymns-menu">HYMNS</button><ul class="dropdown" id="hymns-menu">
-        <li><a href="ALMANZIANS_HYMN.html">Almanzians Hymn</a></li><li><a href="las_pinas_hymn.html">Las Piñas Hymn</a></li>
-        <li><a href="ncr_hymn.html">NCR Hymn</a></li><li><a href="national_anthem.html">National Anthem</a></li>
-      </ul></li>
-      <li><button class="menu-button" data-menu="team-menu">TEAM</button><ul class="dropdown" id="team-menu">
-        <li><a href="credits.html">Website Team &amp; Credits</a></li>
-      </ul></li>
-    </ul>
-  </nav>
+<div class="brand">
+<img alt="LPNHS Almanza logo" src="SCHOOLLOGO.jpg"/>
+<div><h1>LAS PIÑAS NATIONAL HIGH SCHOOL</h1><p>ALMANZA • OFFICIAL SCHOOL WEBSITE</p></div>
+</div>
+<button class="mobile-menu-button" id="mobile-menu-button">MENU</button>
+<nav class="shared-site-nav" id="main-nav">
+<ul>
+<li><a href="index.html#home">HOME</a></li>
+<li><button class="menu-button" data-menu="about-menu" type="button">ABOUT</button><ul class="dropdown" id="about-menu">
+<li><a href="MISSION_VISION.html">Mission &amp; Vision</a></li><li><a href="ORG_CHART.html">Organizational Chart</a></li>
+</ul></li>
+<li><button class="menu-button" data-menu="academics-menu" type="button">ACADEMICS</button><ul class="dropdown" id="academics-menu">
+<li><a href="SECTION_LIST.html">Grade Levels &amp; Sections</a></li><li><a href="MIM.html">Mathematics Club</a></li><li><a href="ICT_CLUB.html">ICT Club</a></li><li><a href="g3_project_TheScribe.html">The Scribe</a></li><li><a href="Ang_Tinig.html">Ang Tinig</a></li>
+</ul></li>
+<li><button class="menu-button" data-menu="student-menu" type="button">STUDENT LIFE</button><ul class="dropdown" id="student-menu">
+<li><a href="SSLG.html">SSLG</a></li><li><a href="g3_project_ESPCLUB.html">ESP Club</a></li><li><a href="BKD.html">BKD Club</a></li><li><a href="CIC (1).html">CIC Club</a></li><li><a href="GSP.html">Girl Scouts</a></li><li><a href="BSP.html">Boy Scouts</a></li><li><a href="GLEE.html">Glee Club</a></li><li><a href="AFDT_Club.html">Folkloric Dance Troupe</a></li><li><a href="YoungFarmersClub.html">Young Farmers Club</a></li><li><a href="g3_project_YES-O.html">YES-O Club</a></li>
+</ul></li>
+<li><button class="menu-button" data-menu="hymns-menu" type="button">HYMNS</button><ul class="dropdown" id="hymns-menu">
+<li><a href="ALMANZIANS_HYMN.html">Almanzians Hymn</a></li><li><a href="las_pinas_hymn.html">Las Piñas Hymn</a></li><li><a href="ncr_hymn.html">NCR Hymn</a></li><li><a href="national_anthem.html">National Anthem</a></li>
+</ul></li>
+<li><button class="menu-button" data-menu="team-menu" type="button">TEAM</button><ul class="dropdown" id="team-menu"><li><a href="credits.html">Website Team &amp; Credits</a></li></ul></li>
+</ul>
+</nav>
 </header>
-
 <main>
 <section class="hero" id="home">
-  <div class="hero-content">
-    <div class="hero-kicker">WELCOME TO LPNHS — ALMANZA</div>
-    <h2>Learn. Grow.<br><span>Lead.</span></h2>
-    <p>A student-centered digital space celebrating learning, leadership, creativity, organizations, school memories, and the people who make the LPNHS-Almanza community special.</p>
-  </div>
-  <div class="hero-badge"><strong>320306</strong><small>SCHOOL ID • ALMANZA</small></div>
+<div class="hero-content">
+<div class="hero-kicker">WELCOME TO LPNHS — ALMANZA</div>
+<h2>Learn. Grow.<br/><span>Lead.</span></h2>
+<p>A student-centered digital space celebrating learning, leadership, creativity, organizations, school memories, and the people who make the LPNHS-Almanza community special.</p>
+</div>
+<div class="hero-badge"><strong>320306</strong><small>SCHOOL ID • ALMANZA</small></div>
 </section>
-
-<section class="school-history" aria-label="History of Las Piñas National High School - Almanza">
-  <div class="history-wrap">
-    <div class="history-intro">
-      <span class="history-kicker">OUR SCHOOL • OUR STORY</span>
-      <h2>The Story of <span>LPNHS-Almanza</span></h2>
-      <p>A glimpse into the history and identity of Las Piñas National High School – Almanza.</p>
-    </div>
-
-    <div class="history-card">
-      <div class="history-year">
-        <span>HISTORY</span>
-        <strong>LPNHS<br>ALMANZA</strong>
-        <i></i>
-      </div>
-
-      <div class="history-content">
-        <div class="history-label">A SCHOOL WITH A STORY</div>
-        <h3>From its beginnings to the community it serves today.</h3>
-        <p>
+<section aria-label="History of Las Piñas National High School - Almanza" class="school-history">
+<div class="history-wrap">
+<div class="history-intro">
+<span class="history-kicker">OUR SCHOOL • OUR STORY</span>
+<h2>The Story of <span>LPNHS-Almanza</span></h2>
+<p>A glimpse into the history and identity of Las Piñas National High School – Almanza.</p>
+</div>
+<div class="history-card">
+<div class="history-year">
+<span>HISTORY</span>
+<strong>LPNHS<br/>ALMANZA</strong>
+<i></i>
+</div>
+<div class="history-content">
+<div class="history-label">A SCHOOL WITH A STORY</div>
+<h3>From its beginnings to the community it serves today.</h3>
+<p>
           Las Piñas National High School – Almanza is part of the educational community
           that serves learners in Las Piñas. Its story reflects the growth of the school,
           its students, teachers, and the community around it.
         </p>
-        <p>
+<p>
           Through the years, the school has continued to provide a place where students
           learn, build friendships, discover their talents, and take part in activities
           that shape their school experience.
         </p>
-
-        <div class="history-detail">
-          <button type="button" class="history-more" aria-expanded="false">
-            <span>READ MORE ABOUT OUR HISTORY</span>
-            <span class="history-plus">+</span>
-          </button>
-          <div class="history-more-content">
-            <p>
+<div class="history-detail">
+<button aria-expanded="false" class="history-more" type="button">
+<span>READ MORE ABOUT OUR HISTORY</span>
+<span class="history-plus">+</span>
+</button>
+<div class="history-more-content">
+<p>
               Las Piñas National High School – Almanza stands as a public secondary school
               serving learners in Almanza Uno, Las Piñas City. Its story is closely connected
               to the growth of the community it serves and to the continuing need for accessible
               public education in the area.
             </p>
-            <p>
+<p>
               As the school community grew, LPNHS-Almanza became more than a place for classroom
               instruction. Generations of students and teachers became part of its story through
               academics, student organizations, leadership activities, cultural programs,
               sports, service, and other experiences that shaped everyday school life.
             </p>
-            <p>
+<p>
               The identity of the school has also been carried forward by its students and
               alumni. Each school year adds new experiences to that history—from the lessons
               learned inside the classroom to the friendships, achievements, traditions, and
               memories created throughout the campus.
             </p>
-            <p>
+<p>
               Today, LPNHS-Almanza continues its role as part of the local educational community,
               giving young people a place to learn, develop their abilities, participate in
               school life, and prepare for the responsibilities that come beyond high school.
               Its history is therefore not only about the institution itself, but also about
               the many people who have helped make the school what it is.
             </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-
-
-
-
-<section class="school-photo-only"><div class="about-photo" role="img" aria-label="School photo"></div></section>
-
-
-
+<section class="school-photo-only"><div aria-label="School photo" class="about-photo" role="img"></div></section>
 <section class="community"><div class="section-head"><div class="tag">OUR COMMUNITY</div><h2>Beyond the Classroom</h2><p>Student experiences can build confidence, responsibility, creativity, and a stronger sense of community.</p></div>
 <div class="community-grid">
-  <div class="community-card"><div class="number">01 — LEARNING</div><h3>Discover</h3><p>Building knowledge and discovering new ideas.</p></div>
-  <div class="community-card"><div class="number">02 — LEADERSHIP</div><h3>Lead</h3><p>Developing responsibility, teamwork, and initiative.</p></div>
-  <div class="community-card"><div class="number">03 — CREATIVITY</div><h3>Create</h3><p>Expressing ideas through projects and activities.</p></div>
-  <div class="community-card"><div class="number">04 — COMMUNITY</div><h3>Connect</h3><p>Working with others through service and cooperation.</p></div>
+<div class="community-card"><div class="number">01 — LEARNING</div><h3>Discover</h3><p>Building knowledge and discovering new ideas.</p></div>
+<div class="community-card"><div class="number">02 — LEADERSHIP</div><h3>Lead</h3><p>Developing responsibility, teamwork, and initiative.</p></div>
+<div class="community-card"><div class="number">03 — CREATIVITY</div><h3>Create</h3><p>Expressing ideas through projects and activities.</p></div>
+<div class="community-card"><div class="number">04 — COMMUNITY</div><h3>Connect</h3><p>Working with others through service and cooperation.</p></div>
 </div></section>
-
 <section class="clubs-bg" id="clubs">
 <div class="section-head">
-  <div class="tag">STUDENT LIFE</div>
-  <h2>Clubs &amp; Organizations</h2>
-  <p>Choose a category to see the organizations under it.</p>
+<div class="tag">STUDENT LIFE</div>
+<h2>Clubs &amp; Organizations</h2>
+<p>Choose a category to see the organizations under it.</p>
 </div>
-
 <div class="club-grid">
-  <div class="club-card club-choice">
-    <button class="club-card-button" type="button" data-club-menu="academic-clubs" aria-expanded="false">
-      <h3>Academic Clubs</h3>
-      <p>Math, ICT, journalism, and other academic-related organizations.</p>
-      <span>VIEW CLUBS →</span>
-    </button>
-    <div class="club-options" id="academic-clubs">
-      <a href="MIM.html">MIM — Mathematics</a>
-      <a href="ICT_CLUB.html">ICT Club</a>
-      <a href="g3_project_TheScribe.html">The Scribe</a>
-      <a href="Ang_Tinig.html">Ang Tinig</a>
-    </div>
-  </div>
-
-  <div class="club-card club-choice">
-    <button class="club-card-button" type="button" data-club-menu="leadership-clubs" aria-expanded="false">
-      <h3>Leadership &amp; Service</h3>
-      <p>Organizations focused on leadership, service, responsibility, and participation.</p>
-      <span>VIEW ORGANIZATIONS →</span>
-    </button>
-    <div class="club-options" id="leadership-clubs">
-      <a href="SSLG.html">SSLG</a>
-      <a href="g3_project_ESPCLUB.html">ESP Club</a>
-      <a href="BKD.html">BKD Club</a>
-      <a href="CIC (1).html">CIC Club</a>
-    </div>
-  </div>
-
-  <div class="club-card club-choice">
-    <button class="club-card-button" type="button" data-club-menu="scouting-clubs" aria-expanded="false">
-      <h3>Scouting</h3>
-      <p>Student organizations that develop teamwork, discipline, responsibility, and leadership.</p>
-      <span>VIEW GROUPS →</span>
-    </button>
-    <div class="club-options" id="scouting-clubs">
-      <a href="GSP.html">Girl Scouts</a>
-      <a href="BSP.html">Boy Scouts</a>
-    </div>
-  </div>
-
-  <div class="club-card club-choice">
-    <button class="club-card-button" type="button" data-club-menu="arts-clubs" aria-expanded="false">
-      <h3>Arts &amp; Culture</h3>
-      <p>Music, dance, performance, and cultural activities for student expression.</p>
-      <span>VIEW ORGANIZATIONS →</span>
-    </button>
-    <div class="club-options" id="arts-clubs">
-      <a href="GLEE.html">Glee Club</a>
-      <a href="AFDT_Club.html">Folkloric Dance Troupe</a>
-    </div>
-  </div>
-
-  <div class="club-card club-choice">
-    <button class="club-card-button" type="button" data-club-menu="environment-clubs" aria-expanded="false">
-      <h3>Environment</h3>
-      <p>Activities that promote environmental awareness and responsibility.</p>
-      <span>VIEW GROUPS →</span>
-    </button>
-    <div class="club-options" id="environment-clubs">
-      <a href="g3_project_YES-O.html">YES-O Club</a>
-    </div>
-  </div>
-
-  <div class="club-card club-choice">
-    <button class="club-card-button" type="button" data-club-menu="farming-clubs" aria-expanded="false">
-      <h3>Young Farmers</h3>
-      <p>Activities related to agriculture, sustainability, and practical skills.</p>
-      <span>VIEW ORGANIZATION →</span>
-    </button>
-    <div class="club-options" id="farming-clubs">
-      <a href="YoungFarmersClub.html">Young Farmers Club</a>
-    </div>
-  </div>
+<div class="club-card club-choice">
+<button aria-expanded="false" class="club-card-button" data-club-menu="academic-clubs" type="button">
+<h3>Academic Clubs</h3>
+<p>Math, ICT, journalism, and other academic-related organizations.</p>
+<span>VIEW CLUBS →</span>
+</button>
+<div class="club-options" id="academic-clubs">
+<a href="MIM.html">MIM — Mathematics</a>
+<a href="ICT_CLUB.html">ICT Club</a>
+<a href="g3_project_TheScribe.html">The Scribe</a>
+<a href="Ang_Tinig.html">Ang Tinig</a>
+</div>
+</div>
+<div class="club-card club-choice">
+<button aria-expanded="false" class="club-card-button" data-club-menu="leadership-clubs" type="button">
+<h3>Leadership &amp; Service</h3>
+<p>Organizations focused on leadership, service, responsibility, and participation.</p>
+<span>VIEW ORGANIZATIONS →</span>
+</button>
+<div class="club-options" id="leadership-clubs">
+<a href="SSLG.html">SSLG</a>
+<a href="g3_project_ESPCLUB.html">ESP Club</a>
+<a href="BKD.html">BKD Club</a>
+<a href="CIC (1).html">CIC Club</a>
+</div>
+</div>
+<div class="club-card club-choice">
+<button aria-expanded="false" class="club-card-button" data-club-menu="scouting-clubs" type="button">
+<h3>Scouting</h3>
+<p>Student organizations that develop teamwork, discipline, responsibility, and leadership.</p>
+<span>VIEW GROUPS →</span>
+</button>
+<div class="club-options" id="scouting-clubs">
+<a href="GSP.html">Girl Scouts</a>
+<a href="BSP.html">Boy Scouts</a>
+</div>
+</div>
+<div class="club-card club-choice">
+<button aria-expanded="false" class="club-card-button" data-club-menu="arts-clubs" type="button">
+<h3>Arts &amp; Culture</h3>
+<p>Music, dance, performance, and cultural activities for student expression.</p>
+<span>VIEW ORGANIZATIONS →</span>
+</button>
+<div class="club-options" id="arts-clubs">
+<a href="GLEE.html">Glee Club</a>
+<a href="AFDT_Club.html">Folkloric Dance Troupe</a>
+</div>
+</div>
+<div class="club-card club-choice">
+<button aria-expanded="false" class="club-card-button" data-club-menu="environment-clubs" type="button">
+<h3>Environment</h3>
+<p>Activities that promote environmental awareness and responsibility.</p>
+<span>VIEW GROUPS →</span>
+</button>
+<div class="club-options" id="environment-clubs">
+<a href="g3_project_YES-O.html">YES-O Club</a>
+</div>
+</div>
+<div class="club-card club-choice">
+<button aria-expanded="false" class="club-card-button" data-club-menu="farming-clubs" type="button">
+<h3>Young Farmers</h3>
+<p>Activities related to agriculture, sustainability, and practical skills.</p>
+<span>VIEW ORGANIZATION →</span>
+</button>
+<div class="club-options" id="farming-clubs">
+<a href="YoungFarmersClub.html">Young Farmers Club</a>
+</div>
+</div>
 </div>
 </section>
-
 <section class="hymns" id="hymns"><div class="section-head"><div class="tag">SOUNDS OF OUR SCHOOL</div><h2>Hymns &amp; National Anthem</h2><p>A dedicated space for the music connected to LPNHS, Las Piñas, NCR, and the Philippines.</p></div>
 <div class="hymn-grid">
-  <div class="hymn-card"><span>SCHOOL</span><h3>Almanzians Hymn</h3><a href="ALMANZIANS_HYMN.html">OPEN PAGE →</a></div>
-  <div class="hymn-card"><span>CITY</span><h3>Las Piñas Hymn</h3><a href="las_pinas_hymn.html">OPEN PAGE →</a></div>
-  <div class="hymn-card"><span>REGION</span><h3>NCR Hymn</h3><a href="ncr_hymn.html">OPEN PAGE →</a></div>
-  <div class="hymn-card"><span>NATION</span><h3>National Anthem</h3><a href="national_anthem.html">OPEN PAGE →</a></div>
+<div class="hymn-card"><span>SCHOOL</span><h3>Almanzians Hymn</h3><a href="ALMANZIANS_HYMN.html">OPEN PAGE →</a></div>
+<div class="hymn-card"><span>CITY</span><h3>Las Piñas Hymn</h3><a href="las_pinas_hymn.html">OPEN PAGE →</a></div>
+<div class="hymn-card"><span>REGION</span><h3>NCR Hymn</h3><a href="ncr_hymn.html">OPEN PAGE →</a></div>
+<div class="hymn-card"><span>NATION</span><h3>National Anthem</h3><a href="national_anthem.html">OPEN PAGE →</a></div>
 </div></section>
-
 <section class="moments"><div class="section-head"><div class="tag">SCHOOL MOMENTS</div><h2>Life at LPNHS — Almanza</h2><p>A visual collection of school moments and memories.</p></div>
 <div class="gallery">
-  <div class="gallery-item g1" data-image="momentno.2.jpg"></div><div class="gallery-item g2" data-image="momentno.3.jpg"></div>
-  <div class="gallery-item g3" data-image="momentno.4.jpg"></div><div class="gallery-item g4" data-image="momentno.5.jpg"></div>
+<div class="gallery-item g1" data-image="momentno.2.jpg"></div><div class="gallery-item g2" data-image="momentno.3.jpg"></div>
+<div class="gallery-item g3" data-image="momentno.4.jpg"></div><div class="gallery-item g4" data-image="momentno.5.jpg"></div>
 </div></section>
-
 <section class="team-preview" id="team"><div class="section-head"><div class="tag">THE PEOPLE BEHIND THE WEBSITE</div><h2>Meet the Website Team</h2><p>A student-built website created through teamwork, ideas, coding, and collaboration.</p></div>
 <div class="team-card">
-  <div class="lead-avatar"><img src="mhayumie_granados.jpg" alt="Mhayumie Granados" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"><span class="lead-initials">MG</span></div><div><small>LEAD CODER</small><h3>Mhayumie Granados</h3><p>Lead developer of the LPNHS — Almanza student website project.</p><a href="credits.html">MEET THE WHOLE TEAM →</a></div>
+<div class="lead-avatar"><img alt="Mhayumie Granados" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';" src="mhayumie_granados.jpg"/><span class="lead-initials">MG</span></div><div><small>LEAD CODER</small><h3>Mhayumie Granados</h3><p>Lead developer of the LPNHS — Almanza student website project.</p><a href="credits.html">MEET THE WHOLE TEAM →</a></div>
 </div></section>
-
 <section class="feedback" id="feedback"><div class="section-head"><div class="tag" style="color:#ffb8bc">WE VALUE YOUR VOICE</div><h2>Website Feedback</h2><p>Tell the website team about your experience.</p></div>
-<form class="form" action="https://formsubmit.co/mhayumiegranados09@gmail.com" method="POST">
-  <input type="hidden" name="_subject" value="LPNHS Almanza Website Feedback"><input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_captcha" value="true"><input type="hidden" name="_next" value="https://xo-mym.github.io/lpnhsa-website/">
-  <div class="form-row"><div class="form-group"><label>FULL NAME</label><input name="name" type="text" placeholder="Enter your name" required></div><div class="form-group"><label>EMAIL ADDRESS</label><input name="email" type="email" placeholder="Enter your email" required></div></div>
-  <div class="form-row"><div class="form-group"><label>GRADE LEVEL</label><select name="grade" id="grade-level" required><option value="">Select Grade Level</option><option value="7">Grade 7</option><option value="8">Grade 8</option><option value="9">Grade 9</option><option value="10">Grade 10</option></select></div><div class="form-group"><label>SECTION</label><select name="section" id="section-select" required disabled><option value="">Select grade level first</option></select></div></div>
-  <div class="form-group"><label>WEBSITE RATING</label><div class="rating"><span><input type="radio" name="rating" value="Excellent"><label>Excellent</label></span><span><input type="radio" name="rating" value="Good"><label>Good</label></span><span><input type="radio" name="rating" value="Fair"><label>Fair</label></span></div></div>
-  <div class="form-group"><label>YOUR FEEDBACK</label><textarea name="message" rows="6" placeholder="Tell us what you think..." required></textarea></div>
-  <button type="submit">SEND FEEDBACK →</button>
+<form action="https://formsubmit.co/mhayumiegranados09@gmail.com" class="form" method="POST">
+<input name="_subject" type="hidden" value="LPNHS Almanza Website Feedback"/><input name="_template" type="hidden" value="table"/>
+<input name="_captcha" type="hidden" value="true"/><input name="_next" type="hidden" value="https://xo-mym.github.io/lpnhsa-website/"/>
+<div class="form-row"><div class="form-group"><label>FULL NAME</label><input name="name" placeholder="Enter your name" required="" type="text"/></div><div class="form-group"><label>EMAIL ADDRESS</label><input name="email" placeholder="Enter your email" required="" type="email"/></div></div>
+<div class="form-row"><div class="form-group"><label>GRADE LEVEL</label><select id="grade-level" name="grade" required=""><option value="">Select Grade Level</option><option value="7">Grade 7</option><option value="8">Grade 8</option><option value="9">Grade 9</option><option value="10">Grade 10</option></select></div><div class="form-group"><label>SECTION</label><select disabled="" id="section-select" name="section" required=""><option value="">Select grade level first</option></select></div></div>
+<div class="form-group"><label>WEBSITE RATING</label><div class="rating"><span><input name="rating" type="radio" value="Excellent"/><label>Excellent</label></span><span><input name="rating" type="radio" value="Good"/><label>Good</label></span><span><input name="rating" type="radio" value="Fair"/><label>Fair</label></span></div></div>
+<div class="form-group"><label>YOUR FEEDBACK</label><textarea name="message" placeholder="Tell us what you think..." required="" rows="6"></textarea></div>
+<button type="submit">SEND FEEDBACK →</button>
 </form></section>
-
 <section class="contact" id="contact"><div class="section-head"><div class="tag">GET IN TOUCH</div><h2>School Information</h2><p>Use the links below to access the school's contact details.</p></div>
 <div class="contact-grid">
-  <a class="contact-card" href="https://www.google.com/maps/search/?api=1&query=Lazo+St%2C+Brgy.+Almanza+Uno%2C+Las+Pi%C3%B1as+City" target="_blank" rel="noopener"><h3>ADDRESS</h3><p>Lazo St., Brgy. Almanza Uno, Las Piñas City</p></a>
-  <a class="contact-card" href="tel:88282886"><h3>TELEPHONE</h3><p>8 828-28-86</p></a>
-  <a class="contact-card" href="mailto:laspinasnhsalmanza@yahoo.com.ph"><h3>EMAIL</h3><p>laspinasnhsalmanza@yahoo.com.ph</p></a>
+<a class="contact-card" href="https://www.google.com/maps/search/?api=1&amp;query=Lazo+St%2C+Brgy.+Almanza+Uno%2C+Las+Pi%C3%B1as+City" rel="noopener" target="_blank"><h3>ADDRESS</h3><p>Lazo St., Brgy. Almanza Uno, Las Piñas City</p></a>
+<a class="contact-card" href="tel:88282886"><h3>TELEPHONE</h3><p>8 828-28-86</p></a>
+<a class="contact-card" href="mailto:laspinasnhsalmanza@yahoo.com.ph"><h3>EMAIL</h3><p>laspinasnhsalmanza@yahoo.com.ph</p></a>
 </div></section>
 </main>
-
 <footer><div class="footer-grid">
-  <div><div class="footer-logo"><img src="SCHOOLLOGO.jpg" alt="School logo"><div><h2>LAS PIÑAS NATIONAL HIGH SCHOOL</h2><p>ALMANZA • SCHOOL ID: 320306</p></div></div><p style="margin-top:15px">Student-made digital school website project.</p></div>
-  <div><h3>EXPLORE</h3><a href="#about">About</a><a href="#clubs">Student Life</a><a href="#hymns">Hymns</a><a href="#team">Website Team</a></div>
-  <div><h3>PROJECT</h3><a href="credits.html">Credits &amp; Sources</a><a href="MISSION_VISION.html">Mission &amp; Vision</a><a href="SECTION_LIST.html">Grade Levels</a><a href="#contact">Contact</a></div>
+<div><div class="footer-logo"><img alt="School logo" src="SCHOOLLOGO.jpg"/><div><h2>LAS PIÑAS NATIONAL HIGH SCHOOL</h2><p>ALMANZA • SCHOOL ID: 320306</p></div></div><p style="margin-top:15px">Student-made digital school website project.</p></div>
+<div><h3>EXPLORE</h3><a href="#about">About</a><a href="#clubs">Student Life</a><a href="#hymns">Hymns</a><a href="#team">Website Team</a></div>
+<div><h3>PROJECT</h3><a href="credits.html">Credits &amp; Sources</a><a href="MISSION_VISION.html">Mission &amp; Vision</a><a href="SECTION_LIST.html">Grade Levels</a><a href="#contact">Contact</a></div>
 </div><div class="copyright">© 2026 • LPNHS — Almanza • Student Website Project</div></footer>
-
-<div id="lightbox"><button class="close-lightbox" id="close-lightbox">×</button><img id="lightbox-img" src="" alt="School moment enlarged"></div>
-
+<div id="lightbox"><button class="close-lightbox" id="close-lightbox">×</button><img alt="School moment enlarged" id="lightbox-img" src=""/></div>
 <script>
 const menuButtons=document.querySelectorAll(".menu-button"),dropdowns=document.querySelectorAll(".dropdown"),mobileButton=document.getElementById("mobile-menu-button"),mainNav=document.getElementById("main-nav");
 function closeMenus(){dropdowns.forEach(x=>x.classList.remove("open"));menuButtons.forEach(x=>{x.classList.remove("active");x.setAttribute("aria-expanded","false")})}
@@ -736,5 +713,27 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 </script>
-</body>
+<script id="shared-nav-script">
+(function(){
+  const nav=document.getElementById('main-nav');
+  if(!nav) return;
+  const buttons=nav.querySelectorAll('.menu-button');
+  function closeMenus(){buttons.forEach(btn=>{const m=document.getElementById(btn.dataset.menu);if(m)m.classList.remove('open');btn.classList.remove('active');btn.setAttribute('aria-expanded','false');});}
+  buttons.forEach(btn=>{btn.setAttribute('aria-expanded','false');btn.addEventListener('click',function(e){e.stopPropagation();const menu=document.getElementById(btn.dataset.menu);const wasOpen=menu.classList.contains('open');closeMenus();if(!wasOpen){menu.classList.add('open');btn.classList.add('active');btn.setAttribute('aria-expanded','true');}});});
+  nav.querySelectorAll('.dropdown a').forEach(a=>a.addEventListener('click',function(){
+    if(location.pathname.endsWith('index.html') || location.pathname.endsWith('/')){
+      sessionStorage.setItem('lpnsa-home-scroll',String(window.scrollY));
+    }
+    closeMenus();
+  }));
+  document.addEventListener('click',function(e){if(!e.target.closest('#main-nav'))closeMenus();});
+})();
+</script><script id="home-scroll-restore">
+(function(){
+  const saved=sessionStorage.getItem('lpnsa-home-scroll');
+  if(saved!==null){
+    window.addEventListener('load',function(){setTimeout(function(){window.scrollTo(0,parseInt(saved,10)||0);sessionStorage.removeItem('lpnsa-home-scroll');},80);});
+  }
+})();
+</script></body>
 </html>
