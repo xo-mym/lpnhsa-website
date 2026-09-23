@@ -119,6 +119,9 @@ footer{background:#031e40;color:#fff;padding:55px 8% 25px}.footer-grid{display:g
 
 #lightbox{position:fixed;inset:0;background:#03152eee;z-index:5000;display:none;place-items:center;padding:25px}#lightbox.open{display:grid}#lightbox img{max-width:min(1000px,92vw);max-height:84vh;border-radius:18px;box-shadow:0 30px 80px #0008}.close-lightbox{position:absolute;top:22px;right:28px;color:#fff;background:#ffffff18;border:1px solid #fff3;border-radius:50%;width:42px;height:42px;font-size:22px;cursor:pointer}
 
+/* Club navigation */
+.club-card-button{width:100%;border:0;background:transparent;text-align:left;cursor:pointer;padding:0;color:inherit;position:relative;z-index:2}.club-card-button h3{margin:0}.club-card-button p{margin:8px 0 15px}.club-card-button span{font-size:10px;color:#d71920;font-weight:900}.club-options{display:none;position:relative;z-index:3;margin-top:16px;padding-top:12px;border-top:1px solid #e1eaf3}.club-choice.open .club-options{display:block}.club-options a{display:block;padding:9px 11px;margin:5px 0;background:#f4f8fd;border-radius:8px;color:#073b78;font-size:11px;font-weight:800}.club-options a:hover{background:#e8f0fa;color:#d71920}.club-choice.open .club-card-button span{color:#073b78}
+
 /* CREATIVE POLISH */
 header{box-shadow:0 8px 28px rgba(6,46,99,.07)}
 .hero{isolation:isolate}
@@ -468,18 +471,13 @@ footer:before{content:"";display:block;width:90px;height:3px;background:linear-g
   </div>
 </section>
 
-<section id="about"><div class="about">
-  <div class="about-photo" role="img" aria-label="School photo"></div>
-  <div class="about-copy">
-    <small>ABOUT OUR SCHOOL</small><h2>A place to learn, grow, and belong.</h2>
-    <p>Las Piñas National High School - Almanza is a public secondary school serving the community of Almanza Uno, Las Piñas City.</p>
-    <p>School life extends beyond classroom lessons through student organizations, leadership activities, cultural programs, service, and community involvement.</p>
-    <div class="feature-list">
-      <div class="feature"><b>LEARNING</b><span>Knowledge and discovery</span></div><div class="feature"><b>LEADERSHIP</b><span>Responsibility and teamwork</span></div>
-      <div class="feature"><b>CREATIVITY</b><span>Arts and expression</span></div><div class="feature"><b>COMMUNITY</b><span>Service and cooperation</span></div>
-    </div>
-  </div>
-</div></section>
+
+
+
+
+<section class="school-photo-only"><div class="about-photo" role="img" aria-label="School photo"></div></section>
+
+
 
 <section class="community"><div class="section-head"><div class="tag">OUR COMMUNITY</div><h2>Beyond the Classroom</h2><p>Student experiences can build confidence, responsibility, creativity, and a stronger sense of community.</p></div>
 <div class="community-grid">
@@ -703,8 +701,16 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.club-card-button').forEach(function (button) {
     button.addEventListener('click', function () {
       const card = button.closest('.club-choice');
-      const isOpen = card.classList.toggle('open');
-      button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      const wasOpen = card.classList.contains('open');
+      document.querySelectorAll('.club-choice').forEach(function (other) {
+        other.classList.remove('open');
+        const otherButton = other.querySelector('.club-card-button');
+        if (otherButton) otherButton.setAttribute('aria-expanded', 'false');
+      });
+      if (!wasOpen) {
+        card.classList.add('open');
+        button.setAttribute('aria-expanded', 'true');
+      }
     });
   });
 
